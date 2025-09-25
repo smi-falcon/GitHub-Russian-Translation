@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="./Assets/Images/logo.png" alt="Логотип" width="200">
+</div>
 <h1 align="center"> GitHub Russian Translation </h1>
 
 ## 🎯 Описание: ##
