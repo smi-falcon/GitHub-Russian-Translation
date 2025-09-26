@@ -252,11 +252,11 @@
         'API': 'API',
         'Home': 'Главная',
         'Team': 'Команда',
-        'Enterprise': 'Предприятие'
+        'Enterprise': 'Предприятие',
         'MCP Registry': 'Реестр MCP',
         'Do not share my personal information': 'Не разглашайте мою личную информацию',
         'Manage Cookies': 'Управление файлами cookie',
-        'Community': 'Сообщество'
+        'Community': 'Сообщество',
         'Contact': 'Контакты',
         'Manage cookies': 'Управление файлами cookie'
     };
