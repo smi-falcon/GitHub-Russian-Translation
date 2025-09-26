@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHubRussianTranslation/raw/main/Userscript/GitHub%20Russian%20Translation.js
+// @updateURL    https://github.com/smi-falcon/GitHubRussianTranslation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @homepageURL  https://github.com/smi-falcon/GitHubRussianTranslation
 // @author       Falcon (@smi-falcon)
 // @match        https://github.com/*
@@ -38,6 +39,7 @@
         'Sign up': 'Регистрация',
         'Dashboard': 'Панель управления',
         'Organizations': 'Организации',
+        'Owners': 'Владельцы',
         'Repositories': 'Репозитории',
         'Projects': 'Проекты',
         'Packages': 'Пакеты',
@@ -52,6 +54,18 @@
         'Your organizations': 'Ваши организации',
         'Your enterprises': 'Ваши предприятия',
         'Your sponsors': 'Ваши спонсоры',
+        'Chat with Copilot': 'Чат с Copilot',
+        'Open Copilot': 'Открыть Copilot',
+        'New conversation in': 'Новый разговор в',
+        'Assistive': 'Вспомогательный',
+        'Spaces': 'Пространства',
+        'Download for': 'Скачать для',
+        'New repository': 'Новый репозиторий',
+        'Import repository': 'Импорт репозитория',
+        'New codespace': 'Новое пространство кода',
+        'New gist': 'Новая суть',
+        'New organization': 'Новая организация',
+        'New project': 'Новый проект',
 
         // Репозиторий
         'Code': 'Код',
@@ -142,6 +156,15 @@
         'Forks': 'Форки',
 
         // Профиль
+        'Name': 'Имя',
+        'Bio': 'Биография',
+        'Pronouns': 'Местоимения',
+        'they/them': 'они/их',
+        'she/her': 'она/ее',
+        'he/him': 'он/его',
+        'Custom': 'Пользовательский',
+        'Display current local time': 'Местное время',
+        'Social accounts': 'Социальные сети',
         'Overview': 'Обзор',
         'Followers': 'Подписчики',
         'Following': 'Подписки',
@@ -171,6 +194,17 @@
         'Security log': 'Журнал безопасности',
         'Sponsorship log': 'Журнал спонсорства',
         'Developer settings': 'Настройки разработчика',
+        'Popular repositories': 'Популярные репозитории',
+        'Customize your pins': 'Настройте свои значки',
+        'Contribution settings': 'Настройки взносов',
+        'Private contributions': 'Частный вклад',
+        'Activity overview': 'Обзор деятельности',
+        'Edit pinned items': 'Редактировать закрепленные элементы',
+        'Contribution activity': 'Вклад в деятельность',
+        'Created their first repository': 'Создали свой первый репозиторий',
+        'Joined GitHub': 'Присоединился к GitHub',
+        'First repository': 'Первый репозиторий',
+        'Seeing something unexpected? Take a look at the': 'Видите что-то неожиданное? Посмотрите на',
 
         // Кнопки и действия
         'Save': 'Сохранить',
@@ -191,6 +225,10 @@
         'yesterday': 'вчера',
         'days ago': 'дней назад',
         'day ago': 'день назад',
+        'weeks ago': 'недель назад',
+        'week ago': 'неделю назад',
+        'months ago': 'месяцев назад',
+        'month ago': 'месяц назад',
         'hours ago': 'часов назад',
         'hour ago': 'час назад',
         'minutes ago': 'минут назад',
@@ -199,6 +237,20 @@
         'just now': 'только что',
         'Updated': 'Обновлено',
         'Created': 'Создано',
+
+        // Месяца
+        'January': 'январь',
+        'February': 'февраль',
+        'March': 'март',
+        'April': 'апрель',
+        'May': 'май',
+        'June': 'июнь',
+        'July': 'июль',
+        'August': 'август',
+        'September': 'сентябрь',
+        'October': 'октябрь',
+        'November': 'ноябрь',
+        'December': 'декабрь',
 
         // Дополнительные термины
         'Repository': 'Репозиторий',
@@ -252,7 +304,7 @@
         'API': 'API',
         'Home': 'Главная',
         'Team': 'Команда',
-        'Enterprise': 'Предприятие',
+        'Enterprises': 'Предприятия',
         'MCP Registry': 'Реестр MCP',
         'Do not share my personal information': 'Не разглашайте мою личную информацию',
         'Manage Cookies': 'Управление файлами cookie',
