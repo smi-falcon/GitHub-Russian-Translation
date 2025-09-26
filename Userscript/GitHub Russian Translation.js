@@ -1,12 +1,15 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Перевод интерфейса сайта GitHub на русский язык.
+// @downloadURL  https://github.com/smi-falcon/GitHubRussianTranslation/raw/main/Userscript/GitHub%20Russian%20Translation.js
+// @homepageURL  https://github.com/smi-falcon/GitHubRussianTranslation
 // @author       Falcon (@smi-falcon)
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
 // @icon         https://github.githubassets.com/favicons/favicon.svg
+// @license      MIT
 // @grant        none
 // @run-at       document-idle
 // ==/UserScript==
@@ -22,8 +25,14 @@
         'Marketplace': 'Магазин',
         'Explore': 'Обзор',
         'Codespaces': 'Кодспейсы',
+        'Models': 'Модели',
         'Sponsors': 'Спонсоры',
         'Settings': 'Настройки',
+        'Copilot settings': 'Copilot настройки',
+        'Feature preview': 'Предварительный просмотр функций',
+        'Appearance': 'Внешний вид',
+        'Accessibility': 'Доступность',
+        'Try Enterprise': 'Попробуйте Enterprise',
         'Sign out': 'Выйти',
         'Sign in': 'Войти',
         'Sign up': 'Регистрация',
@@ -32,6 +41,7 @@
         'Repositories': 'Репозитории',
         'Projects': 'Проекты',
         'Packages': 'Пакеты',
+        'Gists': 'Суть',
         'Stars': 'Звёзды',
         'Profile': 'Профиль',
         'Your profile': 'Ваш профиль',
@@ -142,6 +152,25 @@
         'Contributions': 'Вклад',
         'Activity': 'Активность',
         'Organizations': 'Организации',
+        'Public profile': 'Публичный профиль',
+        'Account': 'Учетная запись',
+        'Access': 'Доступ',
+        'Billing and licensing': 'Выставление счетов и лицензирование',
+        'Emails': 'Электронные письма',
+        'Password and authentication': 'Пароль и аутентификация',
+        'Sessions': 'Сессии',
+        'SSH and GPG keys': 'Ключи SSH и GPG',
+        'Moderation': 'Модерация',
+        'Code, planning, and automation': 'Код, планирование и автоматизация',
+        'Saved replies': 'Сохраненные ответы',
+        'Code security': 'Коды безопасности',
+        'Integrations': 'Интеграции',
+        'Applications': 'Приложения',
+        'Scheduled reminders': 'Запланированные напоминания',
+        'Archives': 'Архивы',
+        'Security log': 'Журнал безопасности',
+        'Sponsorship log': 'Журнал спонсорства',
+        'Developer settings': 'Настройки разработчика',
 
         // Кнопки и действия
         'Save': 'Сохранить',
@@ -224,6 +253,12 @@
         'Home': 'Главная',
         'Team': 'Команда',
         'Enterprise': 'Предприятие'
+        'MCP Registry': 'Реестр MCP',
+        'Do not share my personal information': 'Не разглашайте мою личную информацию',
+        'Manage Cookies': 'Управление файлами cookie',
+        'Community': 'Сообщество'
+        'Contact': 'Контакты',
+        'Manage cookies': 'Управление файлами cookie'
     };
 
     // Функция для замены текста
