@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHubRussianTranslation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHubRussianTranslation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @homepageURL  https://github.com/smi-falcon/GitHubRussianTranslation
-// @author       Falcon (@smi-falcon)
+// @author       Falcon (https://github.com/smi-falcon)
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
 // @icon         https://github.githubassets.com/favicons/favicon.svg
@@ -36,7 +36,9 @@
         'Try Enterprise': 'Попробуйте Enterprise',
         'Sign out': 'Выйти',
         'Sign in': 'Войти',
+        'Signed in as': 'Вошел как',
         'Sign up': 'Регистрация',
+        'Add account': 'Добавить учетную запись',
         'Dashboard': 'Панель управления',
         'Organizations': 'Организации',
         'Owners': 'Владельцы',
@@ -51,9 +53,11 @@
         'Your projects': 'Ваши проекты',
         'Your stars': 'Ваши звёзды',
         'Your gists': 'Ваши gists',
+        'Your GitHub profile': 'Ваш профиль GitHub',
         'Your organizations': 'Ваши организации',
         'Your enterprises': 'Ваши предприятия',
         'Your sponsors': 'Ваши спонсоры',
+        'Your Copilot': 'Ваш Copilot',
         'Chat with Copilot': 'Чат с Copilot',
         'Open Copilot': 'Открыть Copilot',
         'New conversation in': 'Новый разговор в',
@@ -62,6 +66,7 @@
         'Download for': 'Скачать для',
         'New repository': 'Новый репозиторий',
         'Import repository': 'Импорт репозитория',
+        'New': 'Новый',
         'New codespace': 'Новое пространство кода',
         'New gist': 'Новая суть',
         'New organization': 'Новая организация',
@@ -100,6 +105,37 @@
         'Latest release': 'Последний релиз',
         'Used by': 'Используется',
         'Notifications': 'Уведомления',
+        'Select type': 'Выберите тип',
+        'Can be sponsored': 'Может быть спонсировано',
+        'Select language': 'Выберите язык',
+        'Select order': 'Выбрать заказ',
+        'Last updated': 'Последнее обновление',
+
+        // Проекты
+        'Create your first GitHub project': 'Создайте свой первый проект GitHub',
+        'Get started with GitHub Packages': 'Начните работу с GitHub Packages',
+        'Choose a registry': 'Выберите реестр',
+        'Create your first list': 'Создайте свой первый список',
+        'Lists': 'Списки',
+        'Starred repositories': 'Репозитории с отметкой «Избранное»',
+        'Starred topics': 'Избранные темы',
+        'Sort by': 'Сортировать по',
+        'Create list': 'Создать список',
+        'Name ascending (A-Z)': 'Имя по возрастанию',
+        'Name descending (Z-A)': 'Имя по убыванию',
+        'Newest': 'Самые новые',
+        'Oldest': 'Самый старый',
+        'Type: All': 'Тип: Все',
+        'All languages': 'Все языки',
+        'Sort by: Recently starred': 'Сортировать по: Недавно добавленные',
+        'Sort by: Recently active': 'Сортировать по: Недавно активные',
+        'Sort by: Most stars': 'Сортировать по: Больше всего звезд',
+        'Recently starred': 'Недавно снялся',
+        'Recently active': 'Недавно активные',
+        'Most stars': 'Большинство звезд',
+        'All gists': 'Все Gists',
+        'Back to GitHub': 'Вернуться на GitHub',
+        'Create a gist': 'Создать Gist',
 
         // Действия с файлами
         'Edit file': 'Редактировать файл',
@@ -175,7 +211,10 @@
         'Contributions': 'Вклад',
         'Activity': 'Активность',
         'Organizations': 'Организации',
+        'Your personal account': 'Ваш личный кабинет',
+        'Go to your personal profile': 'Перейти в личный профиль',
         'Public profile': 'Публичный профиль',
+        'Profile picture': 'Аватар',
         'Account': 'Учетная запись',
         'Access': 'Доступ',
         'Billing and licensing': 'Выставление счетов и лицензирование',
@@ -194,6 +233,27 @@
         'Security log': 'Журнал безопасности',
         'Sponsorship log': 'Журнал спонсорства',
         'Developer settings': 'Настройки разработчика',
+        'Pinned': 'Закреплено',
+        'Public email': 'Публичная электронная почта',
+        'Company': 'Компания',
+        'Location': 'Местоположение',
+        'Time zone': 'Часовой пояс',
+        'Make profile private and hide activity': 'Сделать профиль приватным и скрыть активность',
+        'Include private contributions on my profile': 'Включить частные пожертвования в мой профиль',
+        'Update preferences': 'Обновление настроек',
+        'ORCID iD': 'Идентификатор ORCID',
+        'Connect your ORCID iD': 'Подключите свой ORCID iD',
+        'Update profile': 'Обновление профиля',
+        'Profile settings': 'Настройки профиля',
+        'Show Achievements on my profile': 'Показать достижения в моем профиле',
+        'GitHub Developer Program': 'Программа для разработчиков GitHub',
+        'Jobs profile': 'Профиль вакансий',
+        'Available for hire': 'Доступно для аренды',
+        'Save jobs profile': 'Сохранить профиль вакансии',
+        'Trending settings': 'Настройки трендов',
+        'Preferred spoken language': 'Предпочтительный язык общения',
+        'Save Trending settings': 'Сохранить настройки трендов',
+        'Contributions & activity': 'Вклады и деятельность',
         'Popular repositories': 'Популярные репозитории',
         'Customize your pins': 'Настройте свои значки',
         'Contribution settings': 'Настройки взносов',
@@ -202,6 +262,7 @@
         'Edit pinned items': 'Редактировать закрепленные элементы',
         'Contribution activity': 'Вклад в деятельность',
         'Created their first repository': 'Создали свой первый репозиторий',
+        'Joined': 'Присоединился',
         'Joined GitHub': 'Присоединился к GitHub',
         'First repository': 'Первый репозиторий',
         'Seeing something unexpected? Take a look at the': 'Видите что-то неожиданное? Посмотрите на',
@@ -310,7 +371,8 @@
         'Manage Cookies': 'Управление файлами cookie',
         'Community': 'Сообщество',
         'Contact': 'Контакты',
-        'Manage cookies': 'Управление файлами cookie'
+        'Manage cookies': 'Управление файлами cookie',
+        'Help': 'Помощь'
     };
 
     // Функция для замены текста
