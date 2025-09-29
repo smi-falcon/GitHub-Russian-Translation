@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -954,18 +954,31 @@
         'Yes': 'Да',
     };
 
+    // Функция для проверки игнорируемых элементов
+    function shouldIgnoreElement(element) {
+        return element.tagName === 'SCRIPT' ||
+               element.tagName === 'STYLE' ||
+               element.tagName === 'NOSCRIPT';
+    }
+
     // Функция для замены текста
     function translateText(node) {
-        if (node.nodeType === Node.TEXT_NODE) {
+        if (node.nodeType === Node.TEXT_NODE && node.parentElement && !shouldIgnoreElement(node.parentElement)) {
             const text = node.textContent.trim();
             if (text && translations[text]) {
                 node.textContent = node.textContent.replace(text, translations[text]);
+                return true;
             }
         }
+        return false;
     }
 
     // Функция для обхода DOM-дерева
     function walkDOM(node) {
+        if (shouldIgnoreElement(node)) {
+            return;
+        }
+
         translateText(node);
         node = node.firstChild;
         while (node) {
@@ -999,6 +1012,14 @@
                 element.setAttribute('title', translations[title]);
             }
         });
+
+        // Перевод alt
+        document.querySelectorAll('[alt]').forEach(element => {
+            const alt = element.getAttribute('alt');
+            if (translations[alt]) {
+                element.setAttribute('alt', translations[alt]);
+            }
+        });
     }
 
     // Основная функция перевода
@@ -1010,8 +1031,11 @@
         translateAttributes();
 
         // Специальная обработка для динамически загружаемого контента
-        document.querySelectorAll('button, a, span, div, h1, h2, h3, h4, h5, h6, p, label, td, th').forEach(element => {
-            if (element.childNodes.length === 1 && element.firstChild.nodeType === Node.TEXT_NODE) {
+        const selectors = 'button, a, span, div, h1, h2, h3, h4, h5, h6, p, label, td, th';
+        document.querySelectorAll(selectors).forEach(element => {
+            if (element.childNodes.length === 1 &&
+                element.firstChild.nodeType === Node.TEXT_NODE &&
+                !shouldIgnoreElement(element)) {
                 const text = element.textContent.trim();
                 if (translations[text]) {
                     element.textContent = translations[text];
@@ -1021,7 +1045,14 @@
     }
 
     // Запуск перевода при загрузке страницы
-    setTimeout(translatePage, 500);
+    let initialTranslateDone = false;
+    function delayedTranslate() {
+        if (!initialTranslateDone) {
+            translatePage();
+            initialTranslateDone = true;
+        }
+    }
+    setTimeout(delayedTranslate, 500);
 
     // Наблюдатель за изменениями DOM
     const observer = new MutationObserver(function(mutations) {
@@ -1032,8 +1063,8 @@
                         walkDOM(node);
                         // Переводим атрибуты у новых элементов
                         if (node.querySelectorAll) {
-                            node.querySelectorAll('[placeholder], [aria-label], [title]').forEach(element => {
-                                ['placeholder', 'aria-label', 'title'].forEach(attr => {
+                            node.querySelectorAll('[placeholder], [aria-label], [title], [alt]').forEach(element => {
+                                ['placeholder', 'aria-label', 'title', 'alt'].forEach(attr => {
                                     const value = element.getAttribute(attr);
                                     if (value && translations[value]) {
                                         element.setAttribute(attr, translations[value]);
