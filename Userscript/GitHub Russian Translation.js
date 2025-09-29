@@ -5,7 +5,7 @@
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
-// @homepageURL  https://github.com/smi-falcon/GitHubRussianTranslation
+// @homepageURL  https://github.com/smi-falcon/GitHub-Russian-Translation
 // @supportURL   https://github.com/smi-falcon/GitHub-Russian-Translation/issues
 // @author       Falcon (https://github.com/smi-falcon)
 // @match        https://github.com/*
