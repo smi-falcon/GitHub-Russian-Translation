@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.9
+// @version      1.10
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -495,6 +495,7 @@
         'Oldest': 'Самый старый',
         'Recently active': 'Недавно активные',
         'Recently starred': 'Недавно снялся',
+        'Recently viewed': 'Недавно просматриваемые',
         'Sort by': 'Сортировать по',
         'Sort by: Most stars': 'Сортировать по: Больше всего звезд',
         'Sort by: Recently active': 'Сортировать по: Недавно активные',
@@ -512,6 +513,9 @@
         'Created by me': 'Создано мной',
         'Created on': 'Создано',
         'Create view': 'Создать представление',
+        'Delete view': 'Удалить вид',
+        'Duplicate': 'Дубликат',
+        'Edit view': 'Редактировать вид',
         'Icon': 'Значок',
         'Mentioned': 'Упомянуто',
         'Order': 'Порядок',
@@ -519,10 +523,37 @@
         'Recent activity': 'Недавняя активность',
         'Reactions': 'Реакции',
         'Save view': 'Сохранить представление',
+        'Saved views menu': 'Меню сохраненных видов',
         'Title': 'Название',
         'Total comments': 'Всего комментариев',
         'Total reactions': 'Общее количество реакций',
         'Views': 'Просмотры',
+
+        // Запросы
+        'Assigned': 'Назначено',
+        'Filter by organization or owner': 'Фильтровать по организации или владельцу',
+        'Least commented': 'Наименее комментируемые',
+        'Least recently updated': 'Наименее недавно обновленные',
+        'Most commented': 'Наиболее комментируемые',
+        'Most reactions': 'Большинство реакций',
+        'Organization': 'Организация',
+        'Private repositories only': 'Только частные репозитории',
+        'Public repositories only': 'Только публичные репозитории',
+        'Recently updated': 'Недавно обновленные',
+        'Repository visibility': 'Видимость репозитория',
+        'Review requests': 'Запросы на проверку',
+
+        // Кодспейсы
+        'Choose a template': 'Выберите шаблон',
+        'Configure and manage': 'Настройка и управление',
+        'Develop locally': 'Развиваться на местном уровне',
+        'Explore quick start templates': 'Изучите шаблоны быстрой настройки',
+        'Getting started with GitHub Codespaces': 'Начало работы с GitHub Codespaces',
+        'Go to docs': 'Перейти к документам',
+        'Learn core concepts': 'Изучите основные концепции',
+        'See all': 'Посмотреть все',
+        'Use this template': 'Используйте этот шаблон',
+        'Your instant dev environment': 'Ваша среда для мгновенной разработки',
 
         // Уведомления
         'Add new filter': 'Добавить новый фильтр',
@@ -600,11 +631,13 @@
         'Close pull request': 'Закрыть запрос на слияние',
         'Comment': 'Комментарий',
         'Comments': 'Комментарии',
+        'Commented': 'С комментариями',
         'Labels': 'Метки',
         'Leave a comment': 'Оставить комментарий',
         'Merge pull request': 'Слить запрос',
         'Milestones': 'Вехи',
         'New issue': 'Новая задача',
+        'No discussions match the selected filters.': 'Нет обсуждений, соответствующих выбранным фильтрам.',
         'Preview': 'Предпросмотр',
         'Reopen issue': 'Переоткрыть задачу',
         'Reopen pull request': 'Переоткрыть запрос на слияние',
