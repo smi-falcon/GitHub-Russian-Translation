@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.13
+// @version      1.14
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -188,6 +188,7 @@
         'Add rule': 'Добавить правило',
         'Add webhook': 'Добавить веб-хук',
         'Add your comment here...': 'Добавьте свой комментарий здесь...',
+        'Able to merge.': 'Возможно объединение.',
         'Advanced filters': 'Расширенные фильтры',
         'Advanced Security': 'Расширенная безопасность',
         'Advisories': 'Рекомендации',
@@ -256,16 +257,20 @@
         'Coding agent': 'Кодирующий агент',
         'Collapse file tree': 'Свернуть дерево файлов',
         'Comment on this file': 'Комментируйте этот файл',
-        'Committed to this repository in the past week': 'Зафиксировано в этом репозитории за последнюю неделю',
+        'Committed to this repository in the past day': 'Внесено в этот репозиторий за последний день',
+        'Committed to this repository in the past week': 'Внесено в этот репозиторий за последнюю неделю',
+        'Committed to this repository in the last month': 'Внесено в этот репозиторий за последний месяц',
         'Commit': 'Коммит',
         'Commit changes': 'Зафиксировать изменения',
         'Commit changes...': 'Зафиксировать изменения',
         'Commit message': 'Сообщение о фиксации',
         'Commits': 'Коммиты',
+        'Committed to this repository': 'Зарегистрирован в этом репозитории',
         'Community Standards': 'Стандарты сообщества',
         'Compare': 'Сравнить',
         'Compact line height': 'Компактная высота строки',
         'Copilot menu': 'Меню Copilot',
+        'Confirm merge': 'Подтвердить слияние',
         'Configuration': 'Конфигурация',
         'Configure dev container': 'Настроить контейнер разработчика',
         'Configure scanning tool': 'Настройка инструмента сканирования',
@@ -281,6 +286,7 @@
         'Copy file name to clipboard': 'Копировать название файла в буфер обмена',
         'Copy raw file': 'Копировать исходный файл',
         'Copy url to clipboard': 'Копировать URL в буфер обмена',
+        'Create draft pull request': 'Создать черновой запрос на слияние',
         'Create repository': 'Создать репозиторий',
         'Create a merge commit': 'Создать коммит слияния',
         'Create a new release': 'Создать новый релиз',
@@ -318,6 +324,7 @@
         'Download PNG': 'Скачать PNG',
         'Download raw file': 'Скачать исходный файл',
         'Drag additional files here to add them to your repository': 'Перетащите дополнительные файлы сюда, чтобы добавить их в репозиторий.',
+        'Drag files here to  add them to  your repository': 'Перетащите файлы сюда, чтобы  добавить их в  ваш репозиторий',
         'Edit file...': 'Редактировать файл...',
         'Edit repository details': 'Изменить детали репозитория',
         'Edit this file': 'Редактировать этот файл',
@@ -401,6 +408,7 @@
         'Markdown is supported': 'Поддерживается разметка Markdown',
         'MCP configuration': 'MCP конфигурация',
         'Merged': 'Слито',
+        'Merging can be performed automatically.': 'Объединение может выполняться автоматически.',
         'Milestone': 'Важная веха',
         'Minimize comments': 'Минимизировать комментарии',
         'Model Context Protocol (MCP)': 'Протокол контекста модели (MCP)',
@@ -428,6 +436,7 @@
         'No conflicts with base branch': 'Нет конфликтов с базовой веткой',
         'No conversations yet': 'Пока нет разговоров',
         'No description, website, or topics provided.': 'Описание, веб-сайт и темы не указаны.',
+        'No new commits yet. Enjoy your day!': 'Пока нет новых коммитов. Приятного дня!',
         'No one has forked this repository yet': 'Пока что никто не создал форк этого репозитория.',
         'No projects': 'Нет проектов',
         'No results': 'Нет результатов',
@@ -444,6 +453,7 @@
         'Nothing to preview': 'Нет предварительного просмотра',
         'Off-topic': 'Не по теме',
         'Open': 'Открыто',
+        'Open a pull request': 'Открыть запрос на слияние',
         'Open in a codespace': 'Открыть в кодовом пространстве',
         'Open issues and pull requests': 'Открытые вопросы и запросы на извлечение',
         'Open symbols on click': 'Открыть символы при нажатии',
@@ -459,10 +469,11 @@
         'Popular content': 'Популярный контент',
         'Prebuild configuration': 'Конфигурация предварительной сборки',
         'Preserve this repository': 'Сохранить этот репозиторий',
-        'Provide quick access to relevant projects.': 'Обеспечить быстрый доступ к соответствующим проектам.',
+        'Propose changes': 'Предложить изменения',
         'Protected tags': 'Защищенные теги',
         'Protected tags have been deprecated': 'Защищенные теги устарели',
         'Protection rules': 'Правила защиты',
+        'Provide quick access to relevant projects.': 'Обеспечить быстрый доступ к соответствующим проектам.',
         'Pull request successfully merged and closed': 'Запрос на слияние успешно выполнен и закрыт.',
         'Pull request title': 'Название запроса на извлечение',
         'Pull request title and commit details': 'Название запроса на извлечение и детали фиксации',
@@ -560,6 +571,8 @@
         'There are no runners configured': 'Нет настроенных бегунов',
         'There aren’t any published security advisories': 'Опубликованных рекомендаций по безопасности нет.',
         'There aren’t any releases here': 'Здесь нет никаких релизов',
+        'These branches can be automatically merged.': 'Эти ветви могут быть автоматически объединены.',
+        'This branch is not ahead of the upstream': 'Эта ветвь не опережает основную ветвь',
         'to search': 'искать',
         'Too heated': 'Слишком горячий',
         'Top Committers': 'Лучшие коммиттеры',
@@ -752,23 +765,39 @@
         'Raw': 'Исходный',
 
         // Поиск и фильтры
+        'Advanced search': 'Расширенный поиск',
         'All': 'Все',
         'Alphabetical': 'По алфавиту',
         'Archived': 'Архивированные',
+        'Date created': 'Дата создания',
+        'Date pushed': 'Дата отложена',
+        'Explore sponsorable projects': 'Изучите проекты, которые можно спонсировать',
+        'Fewest forks': 'Наименьшее количество форков',
+        'Fewest stars': 'Наименьшее количество звезд',
         'Filter': 'Фильтр',
+        'Filter by': 'Фильтр по',
         'Forks': 'Форки',
         'Language': 'Язык',
         'Least recently used': 'Наименее часто используемые',
         'Mirrors': 'Зеркала',
+        'Most forks': 'Большинство форков',
+        'Number of followers': 'Количество подписчиков',
+        'Number of forks': 'Количество форков',
+        'Number of stars': 'Количество звезд',
         'Private': 'Приватные',
         'Public': 'Публичные',
         'Recently used': 'Недавно использованные',
+        'results': 'результаты',
         'Search': 'Поиск',
         'Search or jump to...': 'Поиск или переход...',
+        'Size': 'Размер',
         'Sort': 'Сортировка',
         'Sources': 'Источники',
+        'Sponsor open source projects you depend on': 'Спонсируйте открытые проекты, от которых вы зависите',
         'Templates': 'Шаблоны',
+        'Topic': 'Тема',
         'Type': 'Тип',
+        'View search docs': 'Просмотр документов поиска',
 
         // Issues и PR
         'Approve': 'Одобрить',
@@ -1357,7 +1386,9 @@
     function shouldIgnoreElement(element) {
         return element.tagName === 'SCRIPT' ||
                element.tagName === 'STYLE' ||
-               element.tagName === 'NOSCRIPT';
+               element.tagName === 'NOSCRIPT' ||
+               element.tagName === 'RELATIVE-TIME' ||
+               element.tagName === 'TIME-AGO';
     }
 
     // Функция для замены текста
