@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  Перевод времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -38,6 +38,14 @@
         'a year ago': 'год назад',
         'yesterday': 'вчера',
         'last week': 'на прошлой неделе',
+        'last month': 'в прошлом месяце',
+        'last year': 'в прошлом году',
+        'this month': 'в этом месяце',
+        'this week': 'на этой неделе',
+        'this year': 'в этом году',
+        'Joined last month': 'Присоединился в прошлом месяце',
+        'Joined last week': 'Присоединился на прошлой неделе',
+        'Joined last year': 'Присоединился в прошлом году',
 
         // Абсолютное время
         'Jan': 'янв', 'Feb': 'фев', 'Mar': 'мар', 'Apr': 'апр',
@@ -51,7 +59,8 @@
     // Функция для перевода относительного времени
     function translateRelativeTime(text) {
         // Пропускаем уже переведенный текст
-        if (text.includes('назад') || text.includes('только что') || text.includes('вчера')) {
+        if (text.includes('назад') || text.includes('только что') || text.includes('вчера') ||
+            text.includes('прошлом') || text.includes('этом')) {
             return text;
         }
 
