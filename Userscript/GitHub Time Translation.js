@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Перевод времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -29,32 +29,79 @@
     // Словарь переводов временных выражений
     const timeTranslations = {
         // Относительное время
-        'just now': 'только что',
-        'a minute ago': 'минуту назад',
-        'an hour ago': 'час назад',
-        'a day ago': 'день назад',
-        'a week ago': 'неделю назад',
-        'a month ago': 'месяц назад',
-        'a year ago': 'год назад',
-        'yesterday': 'вчера',
-        'last week': 'на прошлой неделе',
-        'last month': 'в прошлом месяце',
-        'last year': 'в прошлом году',
-        'this month': 'в этом месяце',
-        'this week': 'на этой неделе',
-        'this year': 'в этом году',
-        'Joined last month': 'Присоединился в прошлом месяце',
-        'Joined last week': 'Присоединился на прошлой неделе',
-        'Joined last year': 'Присоединился в прошлом году',
+        'только что': 'только что',
+        'минуту назад': 'минуту назад',
+        'час назад': 'час назад',
+        'день назад': 'день назад',
+        'неделю назад': 'неделю назад',
+        'месяц назад': 'месяц назад',
+        'год назад': 'год назад',
+        'вчера': 'вчера',
+        'на прошлой неделе': 'на прошлой неделе',
+        'в прошлом месяце': 'в прошлом месяце',
+        'в прошлом году': 'в прошлом году',
+        'в этом месяце': 'в этом месяце',
+        'на этой неделе': 'на этой неделе',
+        'в этом году': 'в этом году',
+        'Joined в прошлом месяце': 'Присоединился в прошлом месяце',
+        'Joined на прошлой неделе': 'Присоединился на прошлой неделе',
+        'Joined в прошлом году': 'Присоединился в прошлом году',
 
         // Абсолютное время
-        'Jan': 'янв', 'Feb': 'фев', 'Mar': 'мар', 'Apr': 'апр',
-        'May': 'мая', 'Jun': 'июн', 'Jul': 'июл', 'Aug': 'авг',
-        'Sep': 'сен', 'Oct': 'окт', 'Nov': 'ноя', 'Dec': 'дек',
-        'January': 'января', 'February': 'февраля', 'March': 'марта', 'April': 'апреля',
-        'May': 'мая', 'June': 'июня', 'July': 'июля', 'August': 'августа',
-        'September': 'сентября', 'October': 'октября', 'November': 'ноября', 'December': 'декабря'
+        'янв': 'янв', 'фев': 'фев', 'мар': 'мар', 'апр': 'апр',
+        'мая': 'мая', 'июн': 'июн', 'июл': 'июл', 'авг': 'авг',
+        'сен': 'сен', 'окт': 'окт', 'ноя': 'ноя', 'дек': 'дек',
+        'янвuary': 'января', 'февruary': 'февраля', 'марch': 'марта', 'апрil': 'апреля',
+        'мая': 'мая', 'июнe': 'июня', 'июлy': 'июля', 'авгust': 'августа',
+        'сенtember': 'сентября', 'октober': 'октября', 'нояember': 'ноября', 'декember': 'декабря'
     };
+
+    // Функция для проверки, является ли элемент частью кода или техническим контентом
+    function isCodeOrTechnicalElement(element) {
+        // Для элементов relative-time всегда разрешаем перевод
+        if (element.matches && element.matches('relative-time')) {
+            return false;
+        }
+
+        // Проверка элементов, содержащих код или технические названия
+        if (element.closest('pre') ||
+            element.closest('code') ||
+            element.closest('.blob-code') ||
+            element.closest('.highlight') ||
+            element.closest('.js-file-line-container') ||
+            element.closest('[data-code-marker]') ||
+            element.closest('.react-code-text') ||
+            element.closest('.react-blob-print-hide') ||
+            (element.closest('.Box-body') && element.textContent.includes('{') && element.textContent.includes('}')) ||
+            element.classList.contains('blob-code') ||
+            element.classList.contains('highlight') ||
+            element.classList.contains('js-file-line') ||
+            element.getAttribute('data-code-marker') ||
+            element.classList.contains('react-code-text')) {
+            return true;
+        }
+
+        // Проверка на camelCase, PascalCase, snake_case и kebab-case паттерны
+        const text = element.textContent.trim();
+        if (text.length > 0) {
+            // Проверка camelCase и PascalCase
+            if (/([a-z][A-Z]|[A-Z][a-z][A-Z])/.test(text) && text.length > 10) {
+                return true;
+            }
+
+            // Проверка snake_case и kebab-case
+            if ((text.includes('_') || (text.includes('-') && !text.includes(' '))) && text.length > 8) {
+                return true;
+            }
+
+            // Проверка на технические идентификаторы
+            if (/^[a-zA-Z0-9_\-\.]+$/.test(text) && text.length > 6) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     // Функция для перевода относительного времени
     function translateRelativeTime(text) {
@@ -156,21 +203,31 @@
                 }
             });
 
-            // Обработка текстовых элементов
+            // Обработка текстовых элементов с улучшенной фильтрацией
             const textSelectors = ['span', 'div', 'li', 'p', 'td', 'time'];
             textSelectors.forEach(selector => {
                 document.querySelectorAll(selector).forEach(element => {
+                    // Пропускаем элементы, которые уже содержат relative-time
+                    if (element.querySelector('relative-time')) {
+                        return;
+                    }
+
                     // Пропускаем элементы в markdown и код-блоках
                     if (element.closest('.markdown-body') ||
                         element.closest('pre') ||
                         element.closest('code') ||
-                        element.querySelector('relative-time') ||
-                        element.textContent.length > 100) {
+                        element.textContent.length > 100 ||
+                        isCodeOrTechnicalElement(element)) {
                         return;
                     }
 
                     const originalText = element.textContent.trim();
                     if (!originalText) return;
+
+                    const timePattern = /(ago|now|вчера|week|month|year|янв|фев|мар|апр|мая|июн|июл|авг|сен|окт|ноя|дек)/i;
+                    if (!timePattern.test(originalText)) {
+                        return;
+                    }
 
                     const translated = translateRelativeTime(originalText);
                     if (translated !== originalText && element.childNodes.length === 1) {
@@ -209,7 +266,7 @@
                     if (node.nodeType === Node.ELEMENT_NODE) {
                         if (node.matches && (
                             node.matches('relative-time') ||
-                            (node.textContent && /(ago|now|yesterday|week|month|year)/i.test(node.textContent))
+                            (node.textContent && /(ago|now|вчера|week|month|year)/i.test(node.textContent))
                         )) {
                             hasTimeElements = true;
                             break;
@@ -231,7 +288,7 @@
 
         observer.observe(document.body, {
             childList: true,
-            subtree: false
+            subtree: true
         });
 
         // Дополнительный наблюдатель для контейнеров контента
@@ -257,6 +314,7 @@
             }
         });
 
+        // Добавляем индикатор, что скрипт работает
         console.log('⏰ GitHub Time Translation активирован');
     }
 
