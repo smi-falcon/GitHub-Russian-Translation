@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.2.1
 // @description  Перевод времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -25,6 +25,19 @@
 
     // Флаг отслеживания состояния перевода
     let isTranslating = false;
+
+    // Функция для проверки режима редактирования
+    function isInEditMode() {
+        return document.querySelector('.blob-editor-container') ||
+               document.querySelector('.CodeMirror') ||
+               document.querySelector('.commit-create') ||
+               document.querySelector('.file-editor') ||
+               document.querySelector('.js-blob-form') ||
+               document.querySelector('.monaco-editor') ||
+               document.querySelector('[data-qa-code-editor]') ||
+               window.location.href.includes('/edit/') ||
+               window.location.href.includes('/new/');
+    }
 
     // Словарь переводов временных выражений
     const timeTranslations = {
@@ -64,20 +77,37 @@
         }
 
         // Проверка элементов, содержащих код или технические названия
-        if (element.closest('pre') ||
-            element.closest('code') ||
-            element.closest('.blob-code') ||
+        if (element.closest('.blob-code') ||
+            element.closest('.blob-code-inner') ||
+            element.closest('.blob-editor-container') ||
+            element.closest('.blob-wrapper') ||
+            element.closest('.Box-body') && element.textContent.includes('{') && element.textContent.includes('}') ||
+            element.closest('.CodeMirror') ||
+            element.closest('.commit-create') ||
+            element.closest('.commit-form') ||
+            element.closest('.file') ||
+            element.closest('.file-editor') ||
             element.closest('.highlight') ||
+            element.closest('.input-group') ||
+            element.closest('.js-blob-form') ||
+            element.closest('.js-file-editor') ||
+            element.closest('.js-file-line') ||
             element.closest('.js-file-line-container') ||
-            element.closest('[data-code-marker]') ||
-            element.closest('.react-code-text') ||
+            element.closest('.markdown-body') ||
+            element.closest('.monaco-editor') ||
             element.closest('.react-blob-print-hide') ||
-            (element.closest('.Box-body') && element.textContent.includes('{') && element.textContent.includes('}')) ||
+            element.closest('.react-code-text') ||
+            element.closest('[data-code-marker]') ||
+            element.closest('[data-qa-code-editor]') ||
+            element.closest('#new_blob') ||
+            element.closest('code') ||
+            element.closest('pre') ||
             element.classList.contains('blob-code') ||
+            element.classList.contains('blob-code-inner') ||
             element.classList.contains('highlight') ||
             element.classList.contains('js-file-line') ||
-            element.getAttribute('data-code-marker') ||
-            element.classList.contains('react-code-text')) {
+            element.classList.contains('react-code-text') ||
+            element.getAttribute('data-code-marker')) {
             return true;
         }
 
@@ -165,7 +195,7 @@
 
     // Основная функция перевода временных элементов
     function translateTimeElements() {
-        if (isTranslating) return;
+        if (isTranslating || isInEditMode()) return;
         isTranslating = true;
 
         try {
@@ -213,9 +243,31 @@
                     }
 
                     // Пропускаем элементы в markdown и код-блоках
-                    if (element.closest('.markdown-body') ||
-                        element.closest('pre') ||
+                    if (element.closest('.blob-code') ||
+                        element.closest('.blob-code-inner') ||
+                        element.closest('.blob-editor-container') ||
+                        element.closest('.blob-wrapper') ||
+                        element.closest('.Box-body') ||
+                        element.closest('.CodeMirror') ||
+                        element.closest('.commit-create') ||
+                        element.closest('.commit-form') ||
+                        element.closest('.file') ||
+                        element.closest('.file-editor') ||
+                        element.closest('.highlight') ||
+                        element.closest('.input-group') ||
+                        element.closest('.js-blob-form') ||
+                        element.closest('.js-file-editor') ||
+                        element.closest('.js-file-line') ||
+                        element.closest('.js-file-line-container') ||
+                        element.closest('.markdown-body') ||
+                        element.closest('.monaco-editor') ||
+                        element.closest('.react-blob-print-hide') ||
+                        element.closest('.react-code-text') ||
+                        element.closest('[data-code-marker]') ||
+                        element.closest('[data-qa-code-editor]') ||
+                        element.closest('#new_blob') ||
                         element.closest('code') ||
+                        element.closest('pre') ||
                         element.textContent.length > 100 ||
                         isCodeOrTechnicalElement(element)) {
                         return;
