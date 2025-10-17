@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.3.0
+// @version      1.3.1
 // @description  Перевод дат и времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -105,15 +105,67 @@
 
     // Функция для проверки режима редактирования
     function isInEditMode() {
-        return document.querySelector('.blob-editor-container') ||
-               document.querySelector('.CodeMirror') ||
-               document.querySelector('.commit-create') ||
-               document.querySelector('.file-editor') ||
-               document.querySelector('.js-blob-form') ||
-               document.querySelector('.monaco-editor') ||
-               document.querySelector('[data-qa-code-editor]') ||
-               window.location.href.includes('/edit/') ||
-               window.location.href.includes('/new/');
+        // Проверка видимых редакторов кода
+        if (document.querySelector('.blob-editor-container') ||
+            document.querySelector('.CodeMirror') ||
+            document.querySelector('.commit-create') ||
+            document.querySelector('.file-editor') ||
+            document.querySelector('.js-blob-form') ||
+            document.querySelector('.monaco-editor') ||
+            document.querySelector('[data-qa-code-editor]') ||
+            document.querySelector('.cm-editor') ||
+            document.querySelector('.code-editor') ||
+            document.querySelector('.editor') ||
+            document.querySelector('.text-diff-container') ||
+            document.querySelector('.diff-table') ||
+            document.querySelector('.js-diff-load-container') ||
+            document.querySelector('.js-file-content') ||
+            document.querySelector('.js-gist-file-content') ||
+            document.querySelector('.js-code-editor') ||
+            document.querySelector('.js-previewable-comment-form') ||
+            document.querySelector('.comment-form-textarea') ||
+            document.querySelector('.js-comment-field') ||
+            document.querySelector('.js-new-blob-form') ||
+            document.querySelector('.js-gist-content') ||
+            document.querySelector('.js-gist-update-url') ||
+            document.querySelector('.js-code-container') ||
+            document.querySelector('.js-file') ||
+            document.querySelector('.js-diff-progressive-container')) {
+            return true;
+        }
+
+        // Проверка URL на режимы редактирования
+        if (window.location.href.includes('/edit/') ||
+            window.location.href.includes('/new/') ||
+            window.location.href.includes('/blob/') ||
+            window.location.href.includes('/tree/') ||
+            window.location.href.includes('/commit/') ||
+            window.location.href.includes('/pull/') ||
+            window.location.href.includes('/compare/') ||
+            window.location.href.includes('/gist/') && window.location.href.includes('/edit/') ||
+            window.location.href.includes('/releases/') && window.location.href.includes('/edit/') ||
+            window.location.href.includes('/issues/') && window.location.href.includes('/edit/') ||
+            window.location.href.includes('/discussions/') && window.location.href.includes('/edit/')) {
+            return true;
+        }
+
+        // Проверка активных текстовых областей и полей ввода
+        const activeElement = document.activeElement;
+        if (activeElement && (
+            activeElement.matches('textarea') ||
+            activeElement.matches('input[type="text"]') ||
+            activeElement.matches('input[type="search"]') ||
+            activeElement.matches('[contenteditable="true"]') ||
+            activeElement.matches('.js-comment-field') ||
+            activeElement.matches('.comment-form-textarea') ||
+            activeElement.matches('.js-previewable-comment-form') ||
+            activeElement.matches('.js-blob-form') ||
+            activeElement.matches('.js-gist-file-content') ||
+            activeElement.matches('.js-code-editor'))) {
+            return true;
+        }
+
+        return false;
     }
 
     // Функция для проверки, является ли элемент частью кода или техническим контентом
@@ -123,38 +175,54 @@
             return false;
         }
 
-        // Проверка элементов, содержащих код или технические названия
-        if (element.closest('.blob-code') ||
-            element.closest('.blob-code-inner') ||
-            element.closest('.blob-editor-container') ||
-            element.closest('.blob-wrapper') ||
-            element.closest('.Box-body') && element.textContent.includes('{') && element.textContent.includes('}') ||
-            element.closest('.CodeMirror') ||
-            element.closest('.commit-create') ||
-            element.closest('.commit-form') ||
-            element.closest('.file') ||
-            element.closest('.file-editor') ||
-            element.closest('.highlight') ||
-            element.closest('.input-group') ||
-            element.closest('.js-blob-form') ||
-            element.closest('.js-file-editor') ||
-            element.closest('.js-file-line') ||
-            element.closest('.js-file-line-container') ||
-            element.closest('.markdown-body') ||
-            element.closest('.monaco-editor') ||
-            element.closest('.react-blob-print-hide') ||
-            element.closest('.react-code-text') ||
-            element.closest('[data-code-marker]') ||
-            element.closest('[data-qa-code-editor]') ||
-            element.closest('#new_blob') ||
-            element.closest('code') ||
-            element.closest('pre') ||
-            element.classList.contains('blob-code') ||
-            element.classList.contains('blob-code-inner') ||
-            element.classList.contains('highlight') ||
-            element.classList.contains('js-file-line') ||
-            element.classList.contains('react-code-text') ||
-            element.getAttribute('data-code-marker')) {
+        // Критические селекторы, которые точно являются кодом
+        const criticalCodeSelectors = [
+            '.blob-code',
+            '.blob-code-inner',
+            '.blob-editor-container',
+            '.CodeMirror',
+            '.cm-editor',
+            '.code-editor',
+            '.commit-create',
+            '.file-editor',
+            '.highlight',
+            '.js-blob-form',
+            '.js-file-line',
+            '.js-file-line-container',
+            '.monaco-editor',
+            '.react-code-text',
+            '[data-code-marker]',
+            '[data-qa-code-editor]',
+            '#new_blob',
+            'code',
+            'pre'
+        ];
+
+        // Проверка по критическим селекторам
+        for (const selector of criticalCodeSelectors) {
+            if (element.closest(selector)) {
+                return true;
+            }
+        }
+
+        // Проверка по классам элемента
+        const criticalCodeClasses = [
+            'blob-code',
+            'blob-code-inner',
+            'highlight',
+            'js-file-line',
+            'react-code-text'
+        ];
+
+        for (const className of criticalCodeClasses) {
+            if (element.classList.contains(className)) {
+                return true;
+            }
+        }
+
+        // Проверка по атрибутам
+        if (element.getAttribute('data-code-marker') ||
+            element.getAttribute('data-qa-code-editor')) {
             return true;
         }
 
@@ -173,6 +241,16 @@
 
             // Проверка на технические идентификаторы
             if (/^[a-zA-Z0-9_\-\.]+$/.test(text) && text.length > 6) {
+                return true;
+            }
+
+            // Проверка на JSON, XML, HTML теги
+            if (/^{.*}$/.test(text) || /^<[^>]+>$/.test(text) || text.includes('<?xml') || text.includes('<!DOCTYPE')) {
+                return true;
+            }
+
+            // Проверка на пути и URL
+            if (text.includes('/') && (text.includes('.') || text.includes('://')) && text.length > 8) {
                 return true;
             }
 
@@ -334,7 +412,7 @@
                         element.closest('.blob-code-inner') ||
                         element.closest('.blob-editor-container') ||
                         element.closest('.blob-wrapper') ||
-                        element.closest('.Box-body') ||
+                        element.closest('.Box-body') && element.textContent.includes('{') && element.textContent.includes('}') ||
                         element.closest('.CodeMirror') ||
                         element.closest('.commit-create') ||
                         element.closest('.commit-form') ||
@@ -355,7 +433,12 @@
                         element.closest('#new_blob') ||
                         element.closest('code') ||
                         element.closest('pre') ||
-                        element.textContent.length > 100 ||
+                        element.classList.contains('blob-code') ||
+                        element.classList.contains('blob-code-inner') ||
+                        element.classList.contains('highlight') ||
+                        element.classList.contains('js-file-line') ||
+                        element.classList.contains('react-code-text') ||
+                        element.getAttribute('data-code-marker') ||
                         isCodeOrTechnicalElement(element)) {
                         return;
                     }
@@ -477,7 +560,7 @@
         });
 
         // Добавляем индикатор, что скрипт работает
-        console.log('⏰ GitHub Time Translation активирован (v1.3.1)');
+        console.log('⏰ GitHub Time Translation активирован');
     }
 
     // Запуск инициализации
