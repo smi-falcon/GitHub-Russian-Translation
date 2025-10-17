@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.17
+// @version      1.17.1
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -1636,81 +1636,6 @@
         'Update': 'Обновить',
         'Update comment': 'Обновить комментарий',
 
-        // Время
-        'yesterday': 'вчера',
-        'days ago': 'дней назад',
-        'day ago': 'день назад',
-        'weeks ago': 'недель назад',
-        'week ago': 'неделю назад',
-        'months ago': 'месяцев назад',
-        'month ago': 'месяц назад',
-        'hours ago': 'часов назад',
-        'hour ago': 'час назад',
-        'minutes ago': 'минут назад',
-        'minute ago': 'минуту назад',
-        'seconds ago': 'секунд назад',
-        'second ago': 'секунду назад',
-        'just now': 'только что',
-        'now': 'только что',
-        'Created': 'Создано',
-        'Updated': 'Обновлено',
-        'Today': 'Сегодня',
-        'Yesterday': 'Вчера',
-
-        // Относительное время
-        'a day ago': 'день назад',
-        'an hour ago': 'час назад',
-        'a minute ago': 'минуту назад',
-        'a month ago': 'месяц назад',
-        'a week ago': 'неделю назад',
-        'a year ago': 'год назад',
-
-        // Месяцы
-        'January': 'январь',
-        'February': 'февраль',
-        'March': 'март',
-        'April': 'апрель',
-        'May': 'май',
-        'June': 'июнь',
-        'July': 'июль',
-        'August': 'август',
-        'September': 'сентябрь',
-        'October': 'октябрь',
-        'November': 'ноябрь',
-        'December': 'декабрь',
-
-        // Сокращенные месяцы
-        'Jan': 'янв.',
-        'Feb': 'фев.',
-        'Mar': 'мар.',
-        'Apr': 'апр.',
-        'May': 'май',
-        'Jun': 'июн.',
-        'Jul': 'июл.',
-        'Aug': 'авг.',
-        'Sep': 'сен.',
-        'Oct': 'окт.',
-        'Nov': 'ноя.',
-        'Dec': 'дек.',
-
-        // Дни недели
-        'Monday': 'понедельник',
-        'Tuesday': 'вторник',
-        'Wednesday': 'среда',
-        'Thursday': 'четверг',
-        'Friday': 'пятница',
-        'Saturday': 'суббота',
-        'Sunday': 'воскресенье',
-
-        // Сокращенные дни недели
-        'Mon': 'пн',
-        'Tue': 'вт',
-        'Wed': 'ср',
-        'Thu': 'чт',
-        'Fri': 'пт',
-        'Sat': 'сб',
-        'Sun': 'вс',
-
         // Временные предлоги и конструкции
         'on': 'в',
         'at': 'в',
@@ -1876,9 +1801,7 @@
     function shouldIgnoreElement(element) {
         return element.tagName === 'SCRIPT' ||
                element.tagName === 'STYLE' ||
-               element.tagName === 'NOSCRIPT' ||
-               element.tagName === 'RELATIVE-TIME' ||
-               element.tagName === 'TIME-AGO';
+               element.tagName === 'NOSCRIPT';
     }
 
     // Функция для замены текста
