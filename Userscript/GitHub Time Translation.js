@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.3.1
+// @version      1.3.2
 // @description  Перевод дат и времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -491,10 +491,10 @@
         setTimeout(translateTimeElements, 500);
 
         // Дополнительный перевод через 2 секунды для динамического контента
-        setTimeout(translateTimeElements, 2000);
+        setTimeout(translateTimeElements, 1500);
 
         // Перевод атрибутов
-        setTimeout(translateTimeAttributes, 3000);
+        setTimeout(translateTimeAttributes, 2000);
 
     }
 
@@ -557,6 +557,26 @@
                     subtree: true
                 });
             }
+        });
+
+        // Постоянный мониторинг для предотвращения сброса перевода
+        setInterval(translateTimeElements, 1500);
+
+        // Обработка навигации SPA
+        let originalPushState = history.pushState;
+        history.pushState = function() {
+            originalPushState.apply(this, arguments);
+            setTimeout(translateTimeElements, 500);
+        };
+
+        let originalReplaceState = history.replaceState;
+        history.replaceState = function() {
+            originalReplaceState.apply(this, arguments);
+            setTimeout(translateTimeElements, 500);
+        };
+
+        window.addEventListener('popstate', () => {
+            setTimeout(translateTimeElements, 500);
         });
 
         // Добавляем индикатор, что скрипт работает
