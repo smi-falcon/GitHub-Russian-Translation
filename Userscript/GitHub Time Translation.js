@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.3.2
+// @version      1.3.3
 // @description  Перевод дат и времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -296,8 +296,14 @@
 
         // Перевод стандартных выражений
         for (const [en, ru] of Object.entries(timeTranslations)) {
-            if (translated.includes(en)) {
-                translated = translated.replace(en, ru);
+            // Для коротких аббревиатур используем строгую проверку с границами слов
+            if (en.length <= 3) {
+                const regex = new RegExp('\\b' + en + '\\b', 'gi');
+                translated = translated.replace(regex, ru);
+            } else {
+                if (translated.includes(en)) {
+                    translated = translated.replace(en, ru);
+                }
             }
         }
 
@@ -308,9 +314,9 @@
     function translateAbsoluteTime(text) {
         let translated = text;
 
-        // Замена наименований месяцев и дней недели
+        // Простая и надежная замена с границами слов
         for (const [en, ru] of Object.entries(timeTranslations)) {
-            const regex = new RegExp('\\b' + en + '\\b', 'g');
+            const regex = new RegExp('\\b' + en + '\\b', 'gi');
             translated = translated.replace(regex, ru);
         }
 
