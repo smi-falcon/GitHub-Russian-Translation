@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.24
+// @version      1.25
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -2014,7 +2014,20 @@
     function shouldIgnoreElement(element) {
         return element.tagName === 'SCRIPT' ||
                element.tagName === 'STYLE' ||
-               element.tagName === 'NOSCRIPT';
+               element.tagName === 'NOSCRIPT' ||
+               element.tagName === 'CODE' ||
+               element.tagName === 'PRE';
+    }
+
+    // Функция для проверки URL
+    function shouldIgnorePage() {
+        const path = window.location.pathname;
+        return path.includes('/blob/') ||
+               path.includes('/edit/') ||
+               path.includes('/commit/') ||
+               path.includes('/pull/') ||
+               path.includes('/compare/') ||
+               path.includes('/tree/');
     }
 
     // Функция для замены текста
@@ -2080,6 +2093,10 @@
 
     // Основная функция перевода
     function translatePage() {
+        if (shouldIgnorePage()) {
+            return;
+        }
+
         // Переводим основной контент
         walkDOM(document.body);
 
@@ -2112,6 +2129,10 @@
 
     // Наблюдатель за изменениями DOM
     const observer = new MutationObserver(function(mutations) {
+        if (shouldIgnorePage()) {
+            return;
+        }
+
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList') {
                 mutation.addedNodes.forEach(function(node) {
