@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.25
+// @version      1.26
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -2012,11 +2012,36 @@
 
     // Функция для проверки игнорируемых элементов
     function shouldIgnoreElement(element) {
-        return element.tagName === 'SCRIPT' ||
-               element.tagName === 'STYLE' ||
-               element.tagName === 'NOSCRIPT' ||
-               element.tagName === 'CODE' ||
-               element.tagName === 'PRE';
+        // Проверка по тегам
+        if (element.tagName === 'SCRIPT' ||
+            element.tagName === 'STYLE' ||
+            element.tagName === 'NOSCRIPT' ||
+            element.tagName === 'CODE' ||
+            element.tagName === 'PRE') {
+            return true;
+        }
+
+        // Проверка по CSS-классам
+        if (element.classList && element.classList.length > 0) {
+            const classList = Array.from(element.classList);
+            return classList.some(className =>
+                   className.includes('Link--') ||
+                   className.includes('btn--') ||
+                   className.includes('code') ||
+                   className.includes('commit')
+            );
+        }
+
+        // Проверка по конкретным селекторам
+        if (element.matches && (
+            element.matches('#repo-content-pjax-container > div > div > div > div.Layout-main > react-partial > div > div > div.OverviewContent-module__Box_11--Tqhu2 > div:nth-child(1)') ||
+            element.matches('.OverviewContent-module__Box_11--Tqhu2') ||
+            element.closest('#repo-content-pjax-container > div > div > div > div.Layout-main > react-partial > div > div > div.OverviewContent-module__Box_11--Tqhu2 > div:nth-child(1)')
+        )) {
+            return true;
+        }
+
+        return false;
     }
 
     // Функция для проверки URL
@@ -2025,9 +2050,7 @@
         return path.includes('/blob/') ||
                path.includes('/edit/') ||
                path.includes('/commit/') ||
-               path.includes('/pull/') ||
-               path.includes('/compare/') ||
-               path.includes('/tree/');
+               path.includes('/compare/');
     }
 
     // Функция для замены текста
