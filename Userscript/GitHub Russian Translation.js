@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.26
+// @version      1.27
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -209,6 +209,7 @@
         'Add deploy key': 'Добавить ключи развертывания',
         'Add file': 'Добавить файл',
         'Add rule': 'Добавить правило',
+        'Add this repository to a list': 'Добавить этот репозиторий в список',
         'Add webhook': 'Добавить веб-хук',
         'Add your comment here...': 'Добавьте свой комментарий здесь...',
         'Additions': 'Дополнения',
@@ -340,6 +341,7 @@
         'Create ruleset for default branch': 'Создать набор правил для ветки по умолчанию',
         'Create the first page': 'Создать первую страницу',
         'Custom allowlist': 'Пользовательский белый список',
+        'Custom Patterns': 'Пользовательские шаблоны',
         'Custom properties': 'Пользовательские свойства',
         'Customize': 'Настроить',
         'Customization settings': 'Настройки персонализации',
@@ -521,6 +523,7 @@
         'No reviews': 'Нет отзывов',
         'No rules yet': 'Пока нет правил',
         'No rulesets set up for automated reviews': 'Не настроены наборы правил для автоматических проверок',
+        'No secrets found.': 'Секретов не найдено.',
         'No security policy detected': 'Политика безопасности не обнаружена',
         'No table data available yet.': 'Данные таблицы пока недоступны.',
         'No wrap': 'Без обертки',
@@ -557,6 +560,7 @@
         'Protected tags have been deprecated': 'Защищенные теги устарели',
         'Protection rules': 'Правила защиты',
         'Provide quick access to relevant projects.': 'Обеспечить быстрый доступ к соответствующим проектам.',
+        'Provider': 'Поставщик',
         'Publish release': 'Опубликовать релиз',
         'Pull request successfully merged and closed': 'Запрос на слияние успешно выполнен и закрыт.',
         'Pull request template': 'Шаблон запроса на извлечение',
@@ -619,6 +623,7 @@
         'Secret Protection': 'Секретная защита',
         'Secret scanning': 'Скрытое сканирование',
         'Secret scanning alerts': 'Уведомления о секретном сканировании',
+        'Secret type': 'Секретный тип',
         'Security': 'Безопасность',
         'Security Advisories': 'Рекомендации по безопасности',
         'Security alerts': 'Предупреждения о безопасности',
@@ -629,6 +634,7 @@
         'Select order': 'Выберите заказ',
         'Select tag': 'Выберите тег',
         'Select type': 'Выберите тип',
+        'Service Providers': 'Поставщики услуг',
         'Set milestone': 'Установить веховой показатель',
         'Set as a pre-release': 'Установить как предварительную версию',
         'Set up a security policy': 'Настройте политику безопасности',
@@ -659,7 +665,7 @@
         'star': 'Звезда',
         'Starred': 'Отмечен звездочкой',
         'Stargazers': 'Звездочёты',
-        'Start Setup': 'Начать установку',
+        'Start setup': 'Начать установку',
         'Starred gists': 'Избранные gists',
         'Submit review': 'Отправить отзыв',
         'Subscribed': 'Подписано',
@@ -678,8 +684,10 @@
         'There are no environments for this repository': 'Для этого репозитория нет сред.',
         'There are no prebuilds configured for this repository': 'Для этого репозитория нет предварительно скомпилированных версий.',
         'There are no runners configured': 'Нет настроенных бегунов',
-        'There aren’t any published security advisories': 'Опубликованных рекомендаций по безопасности нет.',
-        'There aren’t any releases here': 'Здесь нет никаких релизов',
+        "There aren’t any closed security advisories": "Нет никаких закрытых рекомендаций по безопасности",
+        "There aren’t any draft security advisories": "Нет никаких проектов рекомендаций по безопасности",
+        "There aren’t any published security advisories": "Опубликованных рекомендаций по безопасности нет.",
+        "There aren’t any releases here": "Здесь нет никаких релизов",
         'These branches can be automatically merged.': 'Эти ветви могут быть автоматически объединены.',
         'This branch is not ahead of the upstream': 'Эта ветвь не опережает основную ветвь',
         'to search': 'искать',
@@ -695,6 +703,7 @@
         'Transfer ownership': 'Передача права собственности',
         'Try adjusting your search filters.': 'Попробуйте настроить фильтры поиска.',
         'Unified': 'Единый',
+        'Unknown': 'Неизвестно',
         'Unlock conversation on this commit': 'Разблокировать обсуждение этого коммита',
         'Unlock conversation': 'Разблокировать разговор',
         'Unpin': 'Открепить',
@@ -706,6 +715,7 @@
         'Use a password-protected SSH key.': 'Используйте защищенный паролем ключ SSH.',
         'Used by': 'Используется',
         'Validate Registries': 'Проверка реестров',
+        'Validity': 'Действительность',
         'Value': 'Значение',
         'View all branches': 'Посмотреть все филиалы',
         'View all tags': 'Посмотреть все теги',
@@ -1553,7 +1563,9 @@
         'Disabled everywhere': 'Отключено везде',
         'Display current local time': 'Местное время',
         'Dotfiles': 'Файлы точек',
+        "Don't specify": "Не указывать",
         'Download your recovery codes': 'Скачайте свои коды восстановления',
+        'Edit pinned items': 'Редактировать закрепленные элементы',
         'Edit profile': 'Редактировать профиль',
         'Edit status': 'Редактировать статус',
         'Editor preference': 'Предпочтения редактора',
@@ -1719,6 +1731,7 @@
         'Save jobs profile': 'Сохранить профиль вакансии',
         'Save keyboard shortcut preferences': 'Сохранить настройки сочетаний клавиш',
         'Save motion preferences': 'Cохранить настройки движения',
+        'Save pins': 'Сохранить пины',
         'Save Trending settings': 'Сохранить настройки трендов',
         'Saved reply title': 'Сохраненное название ответа',
         'Saved replies': 'Сохраненные ответы',
@@ -1732,6 +1745,7 @@
         'Seeing something unexpected? Take a look at the': 'Видите что-то неожиданное? Посмотрите на',
         'Select an option': 'Выберите вариант',
         'Select notification channels': 'Выберите каналы уведомлений',
+        "Select up to six public repositories or gists you'd like to show to anyone.": "Выберите до шести общедоступных репозиториев или гистов, которые вы хотите показать всем.",
         'Select repository': 'Выбрать репозиторий',
         'Selected repositories': 'Выбранные хранилища',
         'Send daily': 'Отправлять ежедневно',
@@ -1741,6 +1755,7 @@
         'Set status': 'Установить статус',
         'Setup authenticator app': 'Настроить приложение для аутентификации',
         'she/her': 'она/ее',
+        'Show:': 'Показать:',
         'Show Achievements on my profile': 'Показать достижения в моем профиле',
         'Show code folding buttons': 'Показать кнопки сворачивания кода',
         'Show Copilot': 'Показать Copilot',
@@ -1961,6 +1976,7 @@
         'Pricing': 'Цены',
         'Products': 'Продукт',
         'Public template': 'Публичный шаблон',
+        'Public archive': 'Публичный архив',
         'Readme': 'Readme',
         'Ready for review': 'Готово к проверке',
         'Recently added': 'Недавно добавлено',
@@ -2025,8 +2041,6 @@
         if (element.classList && element.classList.length > 0) {
             const classList = Array.from(element.classList);
             return classList.some(className =>
-                   className.includes('Link--') ||
-                   className.includes('btn--') ||
                    className.includes('code') ||
                    className.includes('commit')
             );
