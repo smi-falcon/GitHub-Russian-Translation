@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.83
+// @version      1.84
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -115,6 +115,7 @@
         'Suggest next steps for an issue': 'Предложить следующие шаги по решению проблемы',
         'Summarize a pull request': 'Обобщить запрос на извлечение',
         'Support': 'Поддержка',
+        'Switch to classic dashboard': 'Перейти к классической панели управления',
         "That's all for now": "На этом пока всё",
         'The ReadME Project': 'Проект ReadME',
         'Top repositories': 'Лучшие репозитории',
@@ -122,6 +123,7 @@
         'Trending': 'Тренды',
         'Trending developers': 'Популярные разработчики',
         'Trending repositories': 'Популярные репозитории',
+        'Try the new dashboard': 'Попробуйте новую панель управления',
         'Try the new experience': 'Попробуйте новый опыт',
         'Update posts from repositories': 'Обновление сообщений из репозиториев',
         'View changelog →': 'Просмотреть журнал изменений →',
@@ -1245,6 +1247,8 @@
         'Update branch': 'Обновить ветку',
         'Update branch to merge the latest changes from the upstream repository into this branch.': 'Обновите ветку, чтобы включить в неё последние изменения из исходного репозитория.',
         'Update public gist': 'Обновить общедоступный гист',
+        'Update secret': 'Обновить секрет',
+        'Update variable': 'Обновить переменную',
         'Upload an image to customize your repository’s social media preview.': 'Загрузите изображение, чтобы настроить предварительный просмотр вашего репозитория в социальных сетях.',
         'Upload files': 'Загрузить файлы',
         'Usage metrics': 'Показатели использования',
@@ -1724,6 +1728,8 @@
         'All commits': 'Все коммиты',
         'all of GitHub': 'весь GitHub',
         'Build, test, and deploy your code right from GitHub.': 'Создавайте, тестируйте и развертывайте свой код прямо из GitHub.',
+        'Changes can be cleanly merged.': 'Изменения можно корректно объединить.',
+        'Changes reviewed': 'Изменения рассмотрены',
         'Changes since your last review': 'Изменения, произошедшие с момента вашего последнего обзора',
         'Checkout with GitHub CLI': 'Проверка с помощью GitHub CLI',
         'Checkout with GitHub Desktop': 'Открыть в GitHub Desktop',
@@ -1744,6 +1750,7 @@
         'Most reactions': 'Большинство реакций',
         "(most recent)": "(последнее)",
         "most recent": "последнее",
+        'No deployments': 'Нет развёртываний',
         'No previous review found': 'Предыдущих отзывов не найдено',
         'Only manifest files': 'Только файлы манифеста',
         "Only receive notifications from this pull request when you have participated or have been @mentioned.": "Получать уведомления от этого запроса на слияние только когда вы участвовали или вас упомянули (@mentioned).",
@@ -1770,9 +1777,11 @@
         "Submit feedback and approve merging these changes.": "Оставить отзыв и одобрить слияние этих изменений.",
         "Submit feedback suggesting changes.": "Оставить отзыв с предложением изменений.",
         'There aren’t any open pull requests.': 'Открытых запросов на извлечение нет.',
+        'This branch has not been deployed': 'Эта ветка ещё не развёрнута',
         'This pull request is closed.': 'Этот запрос на извлечение закрыт.',
         'This pull request must be reopened to create new codespaces on it.': 'Этот pull request необходимо снова открыть, чтобы создать на его основе новые codespaces.',
         'Try draft pull requests': 'Попробуйте создать черновики запросов на слияние',
+        'to the end of URLs for Git’s plaintext views.': 'в конец URL-адресов для отображения содержимого в виде простого текста в Git.',
         'Unlabeled': 'Без маркировки',
         'Verified': 'Проверено',
         'Viewed files': 'Просмотренные файлы',
@@ -4314,6 +4323,16 @@
                     return;
                 }
             }
+
+            // Перевод "username had no activity during this period."
+            const hadNoActivityMatch = normalizedText.match(/^(.+?)\s+had no activity during this period\.?$/i);
+            if (hadNoActivityMatch) {
+                const username = hadNoActivityMatch[1];
+                if (isUsername(username)) {
+                    span.textContent = `${username} не имел активности за этот период.`;
+                    return;
+                }
+            }
         });
     }
 
@@ -4621,7 +4640,7 @@
         // Проверяем паттерн "Created X commits in Y repositories"
         const normalizedText = text.replace(/\s+/g, ' ').trim();
 
-        const openedPrMatch = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositories?$/i);
+        const openedPrMatch = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (openedPrMatch) {
             const prs = parseInt(openedPrMatch[1], 10);
             const repos = parseInt(openedPrMatch[2], 10);
@@ -4630,7 +4649,7 @@
             return `Открыто ${prs} ${prWord} в ${repos} ${reposWord}`;
         }
 
-        const openedIssueMatch = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositories?$/i);
+        const openedIssueMatch = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (openedIssueMatch) {
             const issues = parseInt(openedIssueMatch[1], 10);
             const repos = parseInt(openedIssueMatch[2], 10);
@@ -4654,7 +4673,7 @@
             return `Открыто ${num} ${word}`;
         }
 
-        const commitsInReposMatch = normalizedText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositories?$/i);
+        const commitsInReposMatch = normalizedText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (commitsInReposMatch) {
             const commits = parseInt(commitsInReposMatch[1], 10);
             const repos = parseInt(commitsInReposMatch[2], 10);
@@ -4664,7 +4683,7 @@
         }
 
         // Проверяем паттерн "Created X repository"
-        const createdRepoMatch = normalizedText.match(/^Created\s+(\d+)\s+repository$/i);
+        const createdRepoMatch = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (createdRepoMatch) {
             const num = parseInt(createdRepoMatch[1], 10);
             const word = (num === 1) ? 'репозиторий' : ((num >= 2 && num <= 4) ? 'репозитория' : 'репозиториев');
@@ -4672,7 +4691,7 @@
         }
 
         // Проверяем паттерн "Created X repositories"
-        const createdReposMatch = normalizedText.match(/^Created\s+(\d+)\s+repositories$/i);
+        const createdReposMatch = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (createdReposMatch) {
             const num = parseInt(createdReposMatch[1], 10);
             const word = (num === 1) ? 'репозиторий' : ((num >= 2 && num <= 4) ? 'репозитория' : 'репозиториев');
@@ -4706,7 +4725,7 @@
         }
 
         // Проверяем паттерн "Opened X other pull requests in Y repositories"
-        const openedPrsInReposMatch = normalizedText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositories?$/i);
+        const openedPrsInReposMatch = normalizedText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (openedPrsInReposMatch) {
             const prs = parseInt(openedPrsInReposMatch[1], 10);
             const repos = parseInt(openedPrsInReposMatch[2], 10);
@@ -4716,7 +4735,7 @@
         }
 
         // Проверяем паттерн "Opened X pull request in Y repositories"
-        const openedPrMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositories?$/i);
+        const openedPrMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (openedPrMatchNew) {
             const prs = parseInt(openedPrMatchNew[1], 10);
             const repos = parseInt(openedPrMatchNew[2], 10);
@@ -4726,7 +4745,7 @@
         }
 
         // Проверяем паттерн "Opened X issue in Y repositories"
-        const openedIssueMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositories?$/i);
+        const openedIssueMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (openedIssueMatchNew) {
             const issues = parseInt(openedIssueMatchNew[1], 10);
             const repos = parseInt(openedIssueMatchNew[2], 10);
@@ -4736,7 +4755,7 @@
         }
 
         // Проверяем паттерн "Created X repositories"
-        const createdReposMatchNew = normalizedText.match(/^Created\s+(\d+)\s+repositories?$/i);
+        const createdReposMatchNew = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
         if (createdReposMatchNew) {
             const num = parseInt(createdReposMatchNew[1], 10);
             const word = (num === 1) ? 'репозиторий' : ((num >= 2 && num <= 4) ? 'репозитория' : 'репозиториев');
@@ -4863,6 +4882,23 @@
             return `${num} ${plural(num, 'доступный раннер', 'доступных раннера', 'доступных раннеров')}`;
         }
 
+        // Проверяем паттерн "X change(s) requested by reviewers with write access."
+        const changeRequestedMatch = cleanText.match(/^(\d+)\s+changes?\s+requested\s+by\s+reviewers\s+with\s+write\s+access\.?$/i);
+        if (changeRequestedMatch) {
+            const num = parseInt(changeRequestedMatch[1], 10);
+            const word = plural(num, 'изменение', 'изменения', 'изменений');
+            const hasDot = cleanText.endsWith('.');
+            return `${num} ${word} запрошено рецензентами с правом на запись${hasDot ? '.' : ''}`;
+        }
+
+        // Проверяем паттерн "X requested change(s)"
+        const requestedChangeMatch = cleanText.match(/^(\d+)\s+requested\s+changes?$/i);
+        if (requestedChangeMatch) {
+            const num = parseInt(requestedChangeMatch[1], 10);
+            const word = plural(num, 'запрошенное изменение', 'запрошенных изменения', 'запрошенных изменений');
+            return `${num} ${word}`;
+        }
+
         return null;
     }
 
@@ -4876,7 +4912,7 @@
             const fullText = element.textContent.replace(/\s+/g, ' ').trim();
 
             // Проверяем паттерн "Created X commits in Y repository"
-            const commitsMatch = fullText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositories?$/i);
+            const commitsMatch = fullText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (commitsMatch) {
                 const commits = parseInt(commitsMatch[1], 10);
                 const repos = parseInt(commitsMatch[2], 10);
@@ -4887,7 +4923,7 @@
             }
 
             // Проверяем паттерн "Opened X other pull requests in Y repositories"
-            const prsMatch = fullText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositories?$/i);
+            const prsMatch = fullText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (prsMatch) {
                 const prs = parseInt(prsMatch[1], 10);
                 const repos = parseInt(prsMatch[2], 10);
@@ -4898,7 +4934,7 @@
             }
 
             // Проверяем паттерн "Created X repositories"
-            const reposMatchCreated = fullText.match(/^Created\s+(\d+)\s+repositories?$/i);
+            const reposMatchCreated = fullText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (reposMatchCreated) {
                 const num = parseInt(reposMatchCreated[1], 10);
                 const word = (num === 1) ? 'репозиторий' : ((num >= 2 && num <= 4) ? 'репозитория' : 'репозиториев');
@@ -4907,7 +4943,7 @@
             }
 
             // Проверяем паттерн "Opened X pull request in Y repositories"
-            const openedPrMatch = fullText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositories?$/i);
+            const openedPrMatch = fullText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (openedPrMatch) {
                 const prs = parseInt(openedPrMatch[1], 10);
                 const repos = parseInt(openedPrMatch[2], 10);
@@ -5612,7 +5648,7 @@
         activitySpans.forEach(span => {
             const text = span.textContent.replace(/\s+/g, ' ').trim();
 
-            let match = text.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositories?$/i);
+            let match = text.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (match) {
                 const prs = parseInt(match[1], 10);
                 const repos = parseInt(match[2], 10);
@@ -5622,7 +5658,7 @@
                 return;
             }
 
-            match = text.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositories?$/i);
+            match = text.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (match) {
                 const issues = parseInt(match[1], 10);
                 const repos = parseInt(match[2], 10);
@@ -5632,7 +5668,7 @@
                 return;
             }
 
-            match = text.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositories?$/i);
+            match = text.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
             if (match) {
                 const commits = parseInt(match[1], 10);
                 const repos = parseInt(match[2], 10);
