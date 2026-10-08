@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.84
+// @version      1.85
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -260,6 +260,7 @@
         'Add links to GitHub Sponsors or third-party methods your repository accepts for financial contributions to your project.': 'Добавьте ссылки на GitHub Sponsors или сторонние методы, которые ваш репозиторий принимает для финансовых взносов в ваш проект.',
         'Add projects to view them here.': 'Добавьте проекты, чтобы просмотреть их здесь.',
         'Add README': 'Добавить README',
+        'Add a README': 'Добавить файл README',
         'Add repositories to this list': 'Добавить репозитории в этот список',
         'Add rule': 'Добавить правило',
         'Add this repository to a list': 'Добавить этот репозиторий в список',
@@ -308,6 +309,8 @@
         'Approval for running fork pull request workflows from contributors': 'Утверждение запуска рабочих процессов запросов на извлечение веток от участников',
         'Archive this repository': 'Архивировать этот репозиторий',
         'Archived repositories': 'Архивные репозитории',
+        'Are you sure?': 'Вы уверены?',
+        'Are you sure you want to delete ubiquitous space spork?': 'Вы уверены, что хотите удалить «ubiquitous space spork»?',
         'Artifact and log retention': 'Хранение артефактов и журналов',
         'Ascending': 'Восходящий',
         'Ask about this diff': 'Спросить об этом различии',
@@ -566,6 +569,7 @@
         'Drag files here to add them to your repository': 'Перетащите файлы сюда, чтобы добавить их в ваш репозиторий',
         'Earned achievements': 'Заработанные достижения',
         'Edit file...': 'Редактировать файл...',
+        'Edit funding links': 'Редактировать ссылки на источники финансирования',
         'Edit message': 'Редактировать сообщение',
         'Edit mode:': 'Режим редактирования:',
         'Edit repository details': 'Изменить детали репозитория',
@@ -680,6 +684,7 @@
         'Have a project elsewhere?': 'У вас есть проект в другом месте?',
         'Having problems?': 'Есть проблемы?',
         'Helpful resources': 'Полезные ресурсы',
+        'Help people interested in this repository understand your project.': 'Помогите людям, заинтересованным в этом репозитории, понять суть вашего проекта.',
         'Here’s how this project compares to': 'Вот как этот проект сравнивается с',
         'Hide whitespace': 'Скрыть пробелы',
         'High or higher': 'Высокий или выше',
@@ -800,9 +805,11 @@
         'Manage account notification settings': 'Управление настройками уведомлений учетной записи',
         'Manage codespaces': 'Управление кодовыми пространствами',
         'Manage Dependabot rules': 'Управление правилами Dependabot',
+        'Manage environments': 'Управление средами',
         'Manage environment secrets': 'Управление секретами среды',
         'Manage environment variables': 'Управление переменными среды',
         'Manage repository vulnerability settings': 'Управление настройками уязвимостей репозитория',
+        'Manage your installation settings.': 'Управляйте настройками установки.',
         'Management': 'Управление',
         'Mark this repository as archived and read-only.': 'Пометить этот репозиторий как заархивированный и доступный только для чтения.',
         'Markdown is supported': 'Поддерживается разметка Markdown',
@@ -857,6 +864,7 @@
         'New workflow': 'Новый рабочий процесс',
         'Never be notified.': 'Никогда не получать уведомления.',
         'Newest Sponsors profile': 'Новые профили Sponsors',
+        'No available destinations to fork this repository.': 'Нет доступных мест, куда можно было бы создать форк этого репозитория.',
         'No branch or tag rules applied yet: all branches and tags are still allowed to deploy.': 'Пока не применены никакие правила для веток и тегов: развертывание по всем веткам и тегам по-прежнему разрешено.',
         'No codespaces': 'Нет кодовых пространств',
         'No commits history': 'Нет истории коммитов',
@@ -4127,6 +4135,7 @@
         'deployments': 'развертываний',
         'Deprecated': 'Устаревший',
         'Description': 'Описание',
+        'Developer': 'Разработчик',
         'Disable': 'Отключить',
         'Disable all': 'Отключить всё',
         'Disable hint': 'Отключить подсказку',
