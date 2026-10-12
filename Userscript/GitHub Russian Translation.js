@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.85
+// @version      1.86
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Russian%20Translation.js
@@ -222,6 +222,7 @@
         'Your stars': 'Ваши звёзды',
 
         // Репозиторий и настройки
+        ', use our': ', воспользуйтесь нашим',
         '(separate with spaces)': '(разделите пробелами)',
         '.gitignore tells git which files not to track.': '.gitignore сообщает git, какие файлы не отслеживать.',
         'Able to merge.': 'Возможно объединение.',
@@ -265,7 +266,9 @@
         'Add rule': 'Добавить правило',
         'Add this repository to a list': 'Добавить этот репозиторий в список',
         'Add this repository to one or more lists': 'Добавить этот репозиторий в один или несколько списков',
+        'Add this topic to your repo': 'Добавьте эту тему в свой репозиторий',
         'Add users to bypass list': 'Добавить пользователей в список исключений',
+        'Add variable': 'Добавить переменную',
         'Add webhook': 'Добавить веб-хук',
         'Add your comment here...': 'Добавьте свой комментарий здесь...',
         'Adds gradients and outlines to increase contrast in charts.': 'Добавляет градиенты и контуры для увеличения контрастности диаграмм.',
@@ -297,6 +300,7 @@
         'Always suggest updating pull request branches': 'Всегда предлагайте обновлять ветки запросов на извлечение',
         'An agent analyzes incoming issues and recommends labels, priority, assignees, and other metadata.': 'Агент анализирует входящие задачи и рекомендует метки, приоритет, исполнителей и другие метаданные.',
         'and start receiving funding.': 'и начать получать финансирование.',
+        'Answered': 'Отвечено',
         'Any': 'Любой',
         'Any action or reusable workflow can be used, regardless of who authored it or where it is defined.': 'Можно использовать любое действие или многократно используемый рабочий процесс, независимо от того, кто его создал и где он определен.',
         'Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.': 'Любые настраиваемые правила оповещений Dependabot будут отключены, если для этого репозитория не включена функция GitHub Advanced Security.',
@@ -416,6 +420,7 @@
         'Compact display density': 'Компактная плотность отображения',
         'Comparing changes': 'Сравнение изменений',
         'Comment on this file': 'Комментируйте этот файл',
+        'Comment options': 'Параметры комментариев',
         'Commenting has been disabled because this issue was converted to a': 'Комментарии отключены, так как эта проблема была преобразована в',
         'Comments are disabled for this gist.': 'Комментарии для этого гиста отключены.',
         'Committed to this repository in the last day': 'Внесено в этот репозиторий за последний день',
@@ -550,6 +555,7 @@
         'Disable comments': 'Отключить комментарии',
         'Disallow assets and tags from being modified once a release is published.': 'Запретить изменение ресурсов и тегов после публикации выпуска.',
         'Discuss and review the changes in this comparison with others.': 'Обсуждайте и просматривайте изменения в этом сравнении с другими.',
+        'Discussion options': 'Параметры обсуждения',
         'Discussions': 'Обсуждения',
         'Discussions are used to ask questions and have open-ended conversations.': 'Дискуссии используются для того, чтобы задавать вопросы и вести открытые беседы.',
         'Discussions is the central space for your community to share announcements, ask questions, and host conversations.': 'Обсуждения — это центральное место в вашем сообществе, где можно делиться объявлениями, задавать вопросы и вести беседы.',
@@ -644,6 +650,7 @@
         'Finish your review': 'Завершите свой отзыв',
         'Findings': 'Результаты',
         'Find code, projects, and people on GitHub:': 'Поиск кода, проектов и людей на GitHub:',
+        'First issue': 'Первый выпуск',
         'Fiscal Host': 'Фискальный хост',
         'Fiscal host project profile URL': 'URL профиля проекта финансового хоста',
         'For security reasons, you cannot change the visibility of a fork.': 'По соображениям безопасности вы не можете изменить настройки видимости форка.',
@@ -812,6 +819,7 @@
         'Manage your installation settings.': 'Управляйте настройками установки.',
         'Management': 'Управление',
         'Mark this repository as archived and read-only.': 'Пометить этот репозиторий как заархивированный и доступный только для чтения.',
+        'Marked as answer': 'Отмечено как ответ',
         'Markdown is supported': 'Поддерживается разметка Markdown',
         'Maximum age of results': 'Максимальный срок хранения результатов',
         'Maximum open pull requests per user': 'Максимальное количество открытых запросов на слияние на одного пользователя',
@@ -941,6 +949,8 @@
         'Other users **can’t add new comments** to this commit.': 'Другие пользователи **не могут добавлять новые комментарии** к этому коммиту.',
         'our docs': 'нашей документации',
         'Owns this repository': 'Владелец этого репозитория',
+        'Participants': 'Участники',
+        'participants': 'участников',
         'Participating and @mentions': 'Участие и @упоминания',
         'Paste, drop, or click to add files': 'Вставьте, перетащите или щелкните, чтобы добавить файлы',
         'Performance metrics': 'Показатели эффективности',
@@ -955,6 +965,7 @@
         'Presented when merging a pull request with merge.': 'Представляется при слиянии запроса на извлечение с помощью merge.',
         'Presented when merging a pull request with squash.': 'Представляется при слиянии запроса на извлечение с squash.',
         'Preserve this repository': 'Сохранить этот репозиторий',
+        'prefixes': 'префиксы',
         'Projects are a customizable, flexible tool for planning and tracking your work.': 'Проекты — это настраиваемый гибкий инструмент для планирования и отслеживания вашей работы.',
         "Projects on GitHub are created at the repository owner's level (organization or user) and can be linked to a repository's Projects tab. Projects are suitable for cross-repository development efforts such as feature work, complex product roadmaps or even Issue triage.": "Проекты на GitHub создаются на уровне владельца репозитория (организации или пользователя) и могут быть привязаны к вкладке «Проекты» репозитория. Проекты подходят для межрепозиторийных разработок, таких как реализация новых функций, разработка сложных дорожных карт продукта или даже сортировка задач.",
         'Propose': 'Предложить',
@@ -1012,6 +1023,7 @@
         'Releases': 'Релизы',
         'released this': 'выпустил это',
         'Relevance': 'Релевантность',
+        'replies': 'ответов',
         'Repository name': 'Название репозитория',
         'Repository owner ': 'Владелец репозитория ',
         'repository rules': 'правила хранилища',
@@ -1036,6 +1048,7 @@
         'Restrict how many pull requests users without write access can have open at one time and add specific users to a bypass list. These settings stay in effect until you change them.': 'Ограничьте количество открытых пул-реквестов, которые могут иметь одновременно пользователи без прав на запись, и добавьте определённых пользователей в список исключений. Эти настройки будут действовать до тех пор, пока вы их не измените.',
         'Restrict users who are permitted to approve or request changes on pull requests in this repository.': 'Ограничьте круг пользователей, которым разрешено утверждать или запрашивать изменения в пул-реквестах в этом репозитории.',
         'Resources for your codespace': 'Ресурсы для вашего кодового пространства',
+        'Return to top': 'Вернуться к началу страницы',
         'Review changes': 'Просмотр изменений',
         'Review in codespace': 'Обзор в кодовом пространстве',
         'Review required': 'Требуется проверка',
@@ -1152,6 +1165,7 @@
         'Successful': 'Успешный',
         'Suggest a policy': 'Предложить политику',
         'Suggest a security policy': 'Предложить политику безопасности',
+        'Suggest an answer': 'Предложить ответ',
         'Suggested for this repository': 'Предлагается для этого репозитория',
         'Suggested workflows': 'Рекомендуемые рабочие процессы',
         'Suggestions': 'Предложения',
@@ -1286,6 +1300,7 @@
         'View existing forks.': 'Просмотреть существующие форки.',
         'View file': 'Просмотреть файл',
         'View fork': 'Просмотр форка',
+        'View full answer': 'Посмотреть полный ответ',
         'View larger runner docs': 'Просмотреть увеличенные документы для раннеров',
         'View license': 'Посмотреть лицензию',
         'View logs': 'Просмотреть журналы',
@@ -3382,6 +3397,7 @@
         'Search deleted packages': 'Поиск удалённых пакетов',
         'Search Issues': 'Поиск задач',
         'Search for apps, actions, and models': 'Поиск приложений, действий и моделей',
+        'Search GitHub': 'Поиск на GitHub',
         'Search notifications': 'Поиск уведомлений',
         'Search MCPs': 'Поиск MCP',
         'Search or create a new tag': 'Найти или создать новый тег',
@@ -3396,6 +3412,7 @@
         'Tell us a little bit about yourself': 'Расскажите нам немного о себе',
         'Use Markdown to format your comment': 'Используйте Markdown для форматирования своего комментария',
         'Write a description': 'Напишите описание',
+        'Write a reply': 'Написать ответ',
 
         // Языки для выпадающего списка
         'No Preference' : 'Без предпочтений',
@@ -4055,11 +4072,13 @@
         '@mention': '@упомянуть',
         'and': 'и',
         'at': 'в',
+        'by': 'к',
         'on': 'на',
         'or': 'или',
         'only': 'только',
         'our': 'нашей',
         'for': 'для',
+        'For an': 'Для',
         'not': 'не',
         'Committed': 'Закоммичено',
         'Created': 'Создано',
@@ -4906,6 +4925,27 @@
             const num = parseInt(requestedChangeMatch[1], 10);
             const word = plural(num, 'запрошенное изменение', 'запрошенных изменения', 'запрошенных изменений');
             return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X replies"
+        const repliesMatch = cleanText.match(/^(\d+)\s+repl(?:y|ies)$/i);
+        if (repliesMatch) {
+            const num = parseInt(repliesMatch[1], 10);
+            return `${num} ${plural(num, 'ответ', 'ответа', 'ответов')}`;
+        }
+
+        // Проверяем паттерн "X participants"
+        const participantsMatch = cleanText.match(/^(\d+)\s+participants?$/i);
+        if (participantsMatch) {
+            const num = parseInt(participantsMatch[1], 10);
+            return `${num} ${plural(num, 'участник', 'участника', 'участников')}`;
+        }
+
+        // Проверяем паттерн "Opened their first issue on GitHub in {owner}/{repo}"
+        const firstIssueMatch = cleanText.match(/^Opened\s+their\s+first\s+issue\s+on\s+GitHub\s+in\s+([\w.-]+\/[\w.-]+)$/i);
+        if (firstIssueMatch) {
+            const repoPath = firstIssueMatch[1];
+            return `Открыл свою первую проблему на GitHub в ${repoPath}`;
         }
 
         return null;
