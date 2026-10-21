@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Time Translation
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  Перевод дат и времени сайта GitHub на русский язык.
 // @downloadURL  https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
 // @updateURL    https://github.com/smi-falcon/GitHub-Russian-Translation/raw/main/Userscript/GitHub%20Time%20Translation.js
@@ -507,6 +507,71 @@
         });
     }
 
+    // Функция для исправления ошибок в переводе
+    function fixTranslationErrors() {
+        if (!document.body) return;
+
+        // Флеш-баннер архивации репозитория
+        const flashSelectors = [
+            '.flash-warn',
+            '.flash-error',
+            '.flash-notice',
+            '[data-component="Flash"]',
+            '[class*="ArchivedRepoBanner"]'
+        ];
+        const flashElements = new Set();
+        flashSelectors.forEach(sel => {
+            document.querySelectorAll(sel).forEach(el => flashElements.add(el));
+        });
+
+        flashElements.forEach(flash => {
+            const text = flash.textContent.trim();
+            if (text.startsWith('Этот репозиторий')) return;
+
+            const m = text.match(/This repo(?:sitory)? was archived by the owner (?:on|на) (.+?)\.\s*It is (?:now|только что)?\s*read-only\.?/);
+            if (!m) return;
+
+            const walker = document.createTreeWalker(flash, NodeFilter.SHOW_TEXT);
+            let n;
+            while (n = walker.nextNode()) {
+                if (n.textContent.includes('This repo')) {
+                    n.textContent = `Этот репозиторий был архивирован владельцем ${m[1]}. Он только для чтения.`;
+                    break;
+                }
+            }
+        });
+
+        // Откат ложного перевода в обычном тексте
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            {
+                acceptNode: function(node) {
+                    const t = node.textContent;
+                    if (!t || !t.includes('только что')) return NodeFilter.FILTER_REJECT;
+                    if (!/только что [a-zA-Z]/.test(t)) return NodeFilter.FILTER_REJECT;
+                    const parent = node.parentElement;
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest(
+                        'code, pre, .blob-code, .blob-code-inner, .highlight, ' +
+                        '.markdown-body, .js-file-line-container, #readme, ' +
+                        '[data-qa-code-editor], .CodeMirror, .cm-editor, .monaco-editor, ' +
+                        '.js-file-line, .react-code-text, [data-code-marker], ' +
+                        '.diff-table, .file-editor, .js-file-content, .js-gist-file-content'
+                    )) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        const nodes = [];
+        let n;
+        while (n = walker.nextNode()) nodes.push(n);
+        nodes.forEach(node => {
+            node.textContent = node.textContent.replace(/только что (?=[a-zA-Z])/g, 'now ');
+        });
+    }
+
     // Основная функция перевода временных элементов
     function translateTimeElements() {
         if (isTranslating || isInEditMode()) return;
@@ -641,6 +706,8 @@
         } finally {
             isTranslating = false;
         }
+
+        fixTranslationErrors();
     }
 
     // Функция для безопасного запуска перевода
