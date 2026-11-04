@@ -1,14 +1,21 @@
 // ==UserScript==
-// @name         GitHub Russian Translation + Git Help
-// @name:ru      Русификатор GitHub + помощь по Git
+// @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
 // @version      7.7
-// @description  Полный перевод GitHub на русский + глоссарий Git-терминов, шпаргалка, подсказки для новичков.
-// @author       smi-falcon + community improvements
+// @description  Перевод интерфейса сайта GitHub на русский язык.
+// @downloadURL  https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
+// @updateURL    https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
+// @homepageURL  https://github.com/smi-falcon/GitHub-Russian-Translation
+// @supportURL   https://github.com/smi-falcon/GitHub-Russian-Translation/issues
+// @author       smi-falcon, vamhana
 // @match        *://github.com/*
 // @match        *://*.github.com/*
+// @icon         https://github.com/smi-falcon/GitHub-Russian-Translation/blob/dictionary-update/Assets/Images/logo.png?raw=true
+// @icon64       https://github.com/smi-falcon/GitHub-Russian-Translation/blob/dictionary-update/Assets/Images/logo.png?raw=true
+// @license      MIT
 // @grant        none
 // @run-at       document-idle
+// @noframes
 // ==/UserScript==
 
 (function () {
