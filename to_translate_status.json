@@ -1,0 +1,11 @@
+{
+  "Merge status": "Статус слияния",
+  "Merge Status": "Статус слияния",
+  "Merge status: blocked": "Статус слияния: заблокировано",
+  "Merge status: ready": "Статус слияния: готово",
+  "Merge status: pending": "Статус слияния: ожидание",
+  "Merge status: draft": "Статус слияния: черновик",
+  "View merge status": "Просмотреть статус слияния",
+  "Merge status details": "Подробности статуса слияния",
+  "Status": "Статус"
+}

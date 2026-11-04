@@ -1,0 +1,9 @@
+{
+  "Merging is currently blocked. Click to view details in the merge panel.": "Слияние в данный момент заблокировано. Нажмите, чтобы просмотреть подробности на панели слияния.",
+  "Merging is currently blocked": "Слияние в данный момент заблокировано",
+  "Click to view details in the merge panel.": "Нажмите, чтобы просмотреть подробности на панели слияния.",
+  "Click to view details in the merge panel": "Нажмите, чтобы просмотреть подробности на панели слияния",
+  "Merging is blocked": "Слияние заблокировано",
+  "This pull request has merge conflicts that must be resolved before it can be merged.": "У этого запроса на слияние есть конфликты, которые необходимо разрешить перед слиянием.",
+  "View details in the merge panel": "Просмотреть подробности на панели слияния"
+}
