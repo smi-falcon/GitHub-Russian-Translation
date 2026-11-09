@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      7.7
+// @version      7.7.1
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
@@ -12651,6 +12651,88 @@
         "View details in the merge panel": "Просмотреть подробности на панели слияния",
 
         // === fix.py applied 7.7 ===
+        ", use our": ", воспользуйтесь нашим",
+        ".\n        Enable paid usage to avoid interruption and add tokens.": ".\n        Включите платное использование, чтобы избежать перерывов в работе и добавить токены.",
+        ".\n    Any changes here will override those limits.": ".\n    Любые изменения здесь переопределят эти ограничения.",
+        "...or create a new repository on the command line": "...или создайте новый репозиторий в командной строке",
+        "...or push an existing repository from the command line": "...или отправьте существующий репозиторий из командной строки",
+        "active forked repositories": "активные форкнутые репозитории",
+        "Add payment method": "Добавить список оплаты",
+        "Add your comment here...": "Добавьте свой комментарий здесь...",
+        "Advanced Move...": "Расширенное перемещение...",
+        "ahead of": "впереди",
+        "all of GitHub": "весь GitHub",
+        "and start receiving funding.": "и начать получать финансирование.",
+        "and uncheck \"Keep my email address private.\"": "и снимите флажок «Сохранять мой адрес электронной почты в тайне».",
+        "and watch the ones you’re interested.": "и смотрите те, которые вам интересны.",
+        "Archive items from a project view and they'll be shown here.": "Архивируйте элементы из представления проекта, и они будут отображаться здесь.",
+        "available runner": "доступный раннер",
+        "available runners": "доступных раннеров",
+        "cache": "кэш",
+        "cached": "в кэше",
+        "can still leave comments": "все еще могут оставлять комментарии",
+        "can’t add new comments": "не могут добавлять новые комментарии",
+        "changed": "изменился",
+        "changed the title": "изменил название",
+        "Chat/completion": "Чат/завершение",
+        "Click \"Add Item\" to get started or use the shortcut": "Нажмите «Добавить элемент», чтобы начать, или воспользуйтесь ярлыком.",
+        "closed this": "закрыл это",
+        "closed this as": "закрыл это как",
+        "closed this as completed": "закрыл как выполненное",
+        "closed this as duplicate": "закрыл как дубликат",
+        "closed this as not planned": "закрыл как не запланированное",
+        "Code review limits are currently managed individually for all repositories. Enable limits to permit only\n            users who have explicitly been granted access to each repository to submit reviews that \"approve\" or\n            \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit\n            comment pull request reviews will continue to be able to do so.": "Ограничения проверки кода в настоящее время управляются индивидуально для всех репозиториев. Включите ограничения, чтобы разрешить только пользователям, которым явно предоставлен доступ к каждому репозиторию, отправлять рецензии с пометкой \"одобрить\" или \"запросить изменения\". Снимите ограничения, чтобы разрешить всем пользователям отправлять рецензии на пул-реквесты. Все пользователи, которые могут отправлять комментарии к рецензиям на пул-реквесты, продолжат это делать.",
+        "Code review limits may already be specified by individual repositories. Any changes here will override those\n        limits until unset.": "Ограничения проверки кода могут уже быть указаны для отдельных репозиториев. Любые изменения здесь переопределят эти ограничения, пока не будут отменены.",
+        "Commit changes...": "Зафиксировать изменения",
+        "Connect MCP servers to Copilot in\n                all Copilot editors and Coding Agent.": "Подключайте серверы MCP к Copilot во\n                всех редакторах Copilot и в агенте кодирования.",
+        "converted this issue into a discussion": "превратил этот вопрос в дискуссию",
+        "converted to draft": "перевёл в черновик",
+        "Country/Region": "Страна/регион",
+        "create a pull request": "создать запрос на извлечение",
+        "create your own protection rules": "создайте свои собственные правила защиты",
+        "creating a new file": "создания нового файла",
+        "day trial": "дневный пробный период",
+        "demilestoned": "удалил из вехи",
+        "Dependabot isn't enabled": "Dependabot не включен",
+        "designated below": "указанному ниже",
+        "discussion": "обсуждение",
+        "doesn't have any public repositories yet": "ещё не имеет публичных репозиториев",
+        "during this period.": "в течение этого периода.",
+        "Edit file...": "Редактировать файл...",
+        "edited": "отредактировал",
+        "edited by": "под редакцией",
+        "Enable **GitHub shortcuts** that don't use modifier keys in their activation. For example, the **g** **n** shortcut to navigate notifications, or **?** to view context relevant shortcuts. **Learn more about character key shortcuts**.": "Включить **сочетания клавиш GitHub**, которые не используют клавиши-модификаторы. Например, сочетание **g** **n** для навигации по уведомлениям или **?** для просмотра соответствующих контексту сочетаний клавиш. **Подробнее о сочетаниях клавиш с символами**.",
+        "explore the full model catalog": "ознакомьтесь с полным каталогом моделей",
+        "Extend your software's reach. Localize and translate continuously from GitHub.": "Расширьте охват вашего программного обеспечения. Осуществляйте локализацию и перевод напрямую из GitHub.",
+        "feed filter": "фильтр ленты",
+        "file": "файл",
+        "files viewed": "просмотренные файлы",
+        "Filter milestones ": "Фильтр этапов",
+        "Find a branch...": "Найти ветку...",
+        "Find a user...": "Найти пользователя...",
+        "Find or create a branch...": "Найти или создать ветку...",
+        "follower": "Подписчик",
+        "followers": "Подписчики",
+        "following": "Подписки",
+        "for this issue or link a pull request.": "для этой проблемы или добавьте ссылку запрос на слияние.",
+        "free rate limits": "бесплатные лимиты скорости",
+        "Get one-time codes sent to your phone via SMS to complete authentication requests. We strongly advise against using SMS because it is susceptible to interception, does not provide resistance against phishing attacks, and deliverability can be unreliable. It is recommended to use an Authenticator app instead of SMS.": "Получайте одноразовые коды на свой телефон посредством SMS для завершения запросов на аутентификации. Мы настоятельно не рекомендуем использовать SMS, поскольку они подвержены перехвату, не обеспечивают защиту от фишинговых атак, а их доставка может быть ненадежной. Вместо SMS рекомендуется использовать приложение Authenticator.",
+        "has no activity yet for this period": "пока не имеет активности за этот период",
+        "If enabled, usage beyond the free tier will be billed per token based on model pricing from\n        your Models budget.": "Если эта функция включена, использование, превышающее бесплатный тариф, будет оплачиваться за токен на основе цен на модели из\n        вашего бюджета Models.",
+        "If enabled, you may be served evaluation models through Copilot Auto model selection .": "Если включено, вам могут предоставляться оценочные модели через автоматический выбор модели Copilot.",
+        "importing git repositories": "Импорт репозиториев Git",
+        "install": "установить",
+        "Interaction limits may already exist in your account's": "Ограничения взаимодействия могут уже существовать в",
+        "Invest in open source software and we'll track your progress here!": "Инвестируйте в программное обеспечение с открытым исходным кодом, и мы будем отслеживать ваши успехи здесь!",
+        "iOS app": "iOS приложение",
+        "labeled": "добавил метку",
+        "Learn more about codespaces...": "Узнайте больше о кодовых пространствах...",
+        "learn more about diff comparisons": "узнать больше о сравнении различий",
+        "learn more here": "Узнайте больше здесь",
+        "lines changed": "изменения в строках",
+        "Link a branch, pull request, or": "Связать ветку, запрос на слияние или",
+        "locked and limited conversation to collaborators ": "заблокировал и ограничил доступ к обсуждению только для участников проекта ",
+        "marked as ready for review": "отметил как готовое к проверке",
         "Merge Status": "Статус слияния",
         "Merge status": "Статус слияния",
         "Merge status details": "Подробности статуса слияния",
@@ -12658,8 +12740,87 @@
         "Merge status: draft": "Статус слияния: черновик",
         "Merge status: pending": "Статус слияния: ожидание",
         "Merge status: ready": "Статус слияния: готово",
+        "milestoned": "добавил в веху",
+        "More languages...": "Другие языки...",
+        "New with options...": "Новое с опциями...",
+        "not planned": "не запланировано",
+        "npm registry": "npm реестр",
+        "On repositories you haven't contributed to yet, we'll warn you when a user you've blocked has previously made contributions.": "В репозиториях, в которые вы еще не вносили вклад, мы будем предупреждать вас, если заблокированный вами пользователь ранее вносил в них вклад.",
+        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "Откройте незавершенный запрос на слияние, не запрашивая официального рецензирования и не рискуя нежелательным слиянием. Когда вы будете готовы к рецензированию кода, вы можете пометить свой черновой запрос на слияние как готовый к рецензированию, что вызовет запрос на рецензирование от всех владельцев кода.",
+        "Open with...": "Открыть с...",
+        "open/closed": "открытый/закрытый",
+        "opened by": "открыт",
+        "or try an": "или попробуйте",
+        "Other users **can’t add new comments** to this commit.": "Другие пользователи **не могут добавлять новые комментарии** к этому коммиту.",
+        "out of 5 stars": "из 5 звёзд",
+        "prefixes": "префиксы",
+        "Price/unit": "Цена за единицу",
+        "released this": "выпустил это",
+        "removed review request for": "убрал запрос проверки для",
+        "renamed": "переименовал",
+        "replies": "ответов",
+        "Repository owner ": "Владелец репозитория ",
+        "requested review from": "запросил проверку от",
+        "Search or jump to...": "Поиск или переход...",
+        "Search...": "Поиск...",
+        "secret context": "скрытый контекст",
+        "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "Функции безопасности и анализа помогают обеспечить безопасность и актуальность ваших репозиториев. Включив эти функции, вы даете нам разрешение на выполнение анализа ваших репозиториев в режиме «только для чтения».",
+        "Select a model to get started, or": "Выберите модель, чтобы начать, или",
+        "Select up to six public repositories or gists you'd like to show to anyone.": "Выберите до шести общедоступных репозиториев или гистов, которые вы хотите показать всем.",
+        "self-assigned this": "самостоятельно назначил это",
+        "set up a workflow yourself": "настройте рабочий процесс самостоятельно",
+        "State/Province": "Штат/провинция",
+        "That's all for now": "На этом пока всё",
+        "The host image defines the operating system in which development containers run. These images receive periodic upgrades for security, functionality, and performance.\n    GitHub Codespaces offers early access to beta images to ensure compatibility with existing development container configurations.\n    Any codespace created or resumed after changing this setting will use the specified image configuration.": "Базовый образ определяет операционную систему, в которой работают контейнеры разработки. Эти образы получают периодические обновления для безопасности, функциональности и производительности.\n    GitHub Codespaces предоставляет ранний доступ к бета-образам для обеспечения совместимости с существующими конфигурациями контейнеров разработки.\n    Любое кодовое пространство, созданное или возобновленное после изменения этого параметра, будет использовать указанную конфигурацию образа.",
+        "There aren't any archived items": "Нет никаких заархивированных элементов",
+        "There aren't any GitHub Apps installed on this repository.": "В этом репозитории не установлено ни одного приложения GitHub.",
+        "There aren't any project templates yet": "Пока нет шаблонов проектов",
+        "There isn't any commit history to show here for the selected date range": "Для выбранного диапазона дат нет истории коммитов, которую можно было бы здесь показать.",
+        "this repository’s settings": "настройках этого репозитория",
+        "This theme will be active when your system is set to \"dark mode\"": "Эта тема будет активна, когда ваша система настроена на \"темный режим\"",
+        "This theme will be active when your system is set to \"light mode\"": "Эта тема будет активна, когда ваша система настроена на \"светлый режим\"",
+        "To receive Dependabot alerts, you must first enable Dependabot alerts in": "Чтобы получать оповещения Dependabot, сначала необходимо включить оповещения Dependabot в",
+        "to see more content, or visit": "чтобы увидеть больше контента, или посетите",
+        "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "Чтобы отказаться от получения писем по нижеперечисленным темам, снимите галочки с тех тем, которые вы не хотите получать, а затем нажмите «Сохранить настройки подписки».",
+        "to the end of URLs for Git’s plaintext views.": "в конец URL-адресов для отображения содержимого в виде простого текста в Git.",
+        "to this repository": "к этому репозиторию",
+        "unassigned": "снял назначение",
+        "unintended side effects": "непредвиденные побочные эффекты",
+        "unpinned": "открепил",
+        "Upgrade for higher limits, premium models, AI reviews.\n                      \n                      Free responses reset in 14 days.": "Обновитесь для увеличения лимитов, премиальных моделей и проверок с помощью ИИ.\n                      \n                      Бесплатные ответы восстанавливаются через 14 дней.",
+        "uploading an existing file": "загрузки существующего файла",
+        "variable context": "изменяющийся контекст",
         "View merge status": "Просмотреть статус слияния",
-};
+        "We **will** create redirects for your repositories\n                (web and git access).": "Мы **будем** создавать перенаправления для ваших репозиториев (веб-доступ и git-доступ).",
+        "We will **immediately delete all of your repositories\n              (2)**, along with all of your forks,\n              wikis, issues, pull requests, and GitHub Pages sites.": "Мы **немедленно удалим все ваши репозитории (2)**, вместе со всеми вашими форками, вики, задачами, пулл-реквестами и сайтами GitHub Pages.",
+        "We're still processing your last request. Please wait for that to complete before submitting a new request.": "Ваш предыдущий запрос ещё обрабатывается. Пожалуйста, подождите.",
+        "Welcome to the GitHubRussianTranslation wiki!": "Добро пожаловать на вики-сайт GitHubRussianTranslation!",
+        "What's new": "Что нового",
+        "When you push to GitHub, we'll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "Когда вы отправляете данные в GitHub, мы проверяем последнюю фиксацию. Если адрес электронной почты автора этой фиксации является личным адресом в вашей учетной записи GitHub, мы блокируем отправку и предупреждаем вас о раскрытии вашего личного адреса электронной почты.",
+        "with access": "с доступом",
+        "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "Благодаря CI/CD, Dependabot и крупнейшему в мире сообществу разработчиков GitHub предоставляет вашей команде все необходимое для более быстрого выпуска более качественного программного обеспечения.",
+        "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus\n    on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait\n    for the agent to request your review, then leave feedback on the pull request to iterate.": "С помощью агента кодирования Copilot вы можете делегировать задачи Copilot, освобождая себя для сосредоточения\n    на творческой, сложной и важной работе. Просто назначьте задачу Copilot, дождитесь,\n    когда агент запросит вашу проверку, затем оставьте отзыв в пул-реквесте для итерации.",
+        "Won't fix, can't repro, stale": "Не исправляется, не воспроизводится, устарело",
+        "Yesterday's activity": "Активность за вчера",
+        "You and other collaborators with access to this repository **can still leave comments** that others can see.": "Вы и другие участники с доступом к этому репозиторию **все еще можете оставлять комментарии**, которые видят другие.",
+        "You can **@mention** other users and\n                    organizations to link to them.": "Вы можете **@упоминать** других пользователей и организации, чтобы ссылаться на них.",
+        "You can **@mention** your company’s GitHub\n                        organization to link it.": "Вы можете **@упомянуть** организацию вашей компании на GitHub, чтобы создать ссылку на неё.",
+        "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "Вы можете включить агент кодирования Copilot для других пользователей, но не сможете назначать задачи Copilot, поскольку у вас нет лицензии Copilot Pro, Copilot Pro+, Copilot Business или Copilot Enterprise.",
+        "You don't directly depend on any repositories whose maintainers can be sponsored.": "Вы не зависите напрямую от каких-либо репозиториев, поддержка которых может спонсироваться.",
+        "You don't have an active coupon.": "У вас нет активного купона.",
+        "You don't have any codespaces with this repository checked out": "У вас нет кодовых пространств с этим репозиторием, проверенным",
+        "You don't have any enterprises": "У вас нет предприятий",
+        "You don't have any forks of this repository.": "У вас нет никаких форков этого репозитория.",
+        "You don't have any self-hosted runners for this repository": "У вас нет самостоятельно размещенных раннеров для этого репозитория",
+        "You don't have workflows on any of your organization repositories.": "У вас нет рабочих процессов ни в одном из репозиториев вашей организации.",
+        "You haven't sponsored anyone yet.": "Вы еще никого не спонсировали.",
+        "You'll be prompted to verify your identity before account deletion.": "Перед удалением аккаунта вам будет предложено подтвердить вашу личность.",
+        "You're all set — the branch has been merged.": "Всё готово — ветка объединена.",
+        "You're currently not sponsoring anyone.": "В настоящее время вы никого не спонсируете.",
+        "You're not receiving notifications from this thread.": "Вы не получаете уведомления из этой ветки.",
+        "You're receiving notifications because you're subscribed to this thread.": "Вы получаете уведомления, потому что подписаны на эту ветку.",
+        "Your personal account cannot be converted to an organization.\n    You must create a new organization and transfer your repositories and projects to it instead.\n    You can then rename your personal account and the organization if you want your organization to have the\n    same name that you are currently using for your personal account.": "Ваш личный аккаунт нельзя преобразовать в организацию. Вместо этого вам необходимо создать новую организацию и перенести в неё свои репозитории и проекты. После этого вы можете переименовать свой личный аккаунт и организацию, если хотите, чтобы у организации было то же имя, которое вы сейчас используете для личного аккаунта.",
+    };
 
     // === нормализованный индекс (пробелы и \n → одиночный пробел) ===
     const exactTranslationsNormalized = {};
@@ -12676,6 +12837,56 @@
         if (key.includes('{0}') || key.includes(' (')) continue;
         lowerCaseTranslations[key.toLowerCase()] = value;
     }
+
+    Object.assign(exactTranslations, {
+        "added": "добавлен",
+        "advanced search": "расширенный поиск",
+        "any reason": "Любая причина",
+        "assigned": "назначил",
+        "author": "автор",
+        "base": "основа",
+        "branches": "ветки",
+        "budget": "бюджет",
+        "By": "От",
+        "caches": "кэша",
+        "collaborators": "сотрудниками",
+        "commented": "прокомментировал",
+        "compare": "сравнить",
+        "completed": "завершённое",
+        "create a branch": "создать ветвь",
+        "Create New...": "Создать новый…",
+        "created": "создал",
+        "default": "по умолчанию",
+        "deployment": "развертывание",
+        "deployments": "развертываний",
+        "disabled": "отключено",
+        "enabled": "включено",
+        "files changed": "файлов изменено",
+        "fork": "Форк",
+        "forked from": "форк от",
+        "forks": "Форков",
+        "In": "В",
+        "Is": "Это",
+        "locked": "заблокировал",
+        "mentioned": "упомянул",
+        "most recent": "последнее",
+        "No": "Нет",
+        "open": "открытый",
+        "OR": "ИЛИ",
+        "participants": "участников",
+        "pinned": "закрепил",
+        "repository rules": "правила хранилища",
+        "reopened": "вновь открытый",
+        "results": "результаты",
+        "star": "Звезда",
+        "stars": "Звёзд",
+        "tags": "теги",
+        "unlabeled": "удалил метку",
+        "unlocked": "разблокировал",
+        "View commits for all users": "Посмотреть коммиты всех пользователей",
+        "watching": "Наблюдателей",
+        "workflow runs": "запусков рабочих процессов",
+    });
 
     // === v6.2 + v6.3: слова, которые не заменяем пословно (бренды) ===
     const PRESERVED_WORDS = new Set([
@@ -13095,7 +13306,18 @@
     const missingStrings = new Set();
     let collectMissing = false;
 
+    const trimmedCache = new Map();
     function translateTrimmed(trimmed, context) {
+        if (collectMissing) return translateTrimmedRaw(trimmed, context);
+        const cacheKey = (context || '') + '\u0000' + trimmed;
+        if (trimmedCache.has(cacheKey)) return trimmedCache.get(cacheKey);
+        if (trimmedCache.size > 20000) trimmedCache.clear();
+        const result = translateTrimmedRaw(trimmed, context);
+        trimmedCache.set(cacheKey, result);
+        return result;
+    }
+
+    function translateTrimmedRaw(trimmed, context) {
         if (context && exactTranslations[trimmed + ' (' + context + ')'] !== undefined) {
             return exactTranslations[trimmed + ' (' + context + ')'];
         }
@@ -13153,6 +13375,11 @@
             if (exactTranslations[norm] !== undefined) return exactTranslations[norm];
             const lower = norm.toLowerCase();
             if (lowerCaseTranslations[lower] !== undefined) return lowerCaseTranslations[lower];
+            const numNorm = translateNumberedExtended(norm);
+            if (numNorm) {
+                const ws = text.match(/^(\s*)[\s\S]*?(\s*)$/);
+                return (ws ? ws[1] : '') + numNorm + (ws ? ws[2] : '');
+            }
             return text.split('\n')
                 .map(line => translateText(line, context))
                 .join('\n');
@@ -13194,8 +13421,16 @@
         '.commit-message', '.commit-title', '.commit-desc',
         '.js-issue-title', '.gh-header-title',
         '[data-testid="issue-title"]',
-        '.gist-content', '.gist-blob'
+        '.gist-content', '.gist-blob',
+        '.topic-tag:not(.topic-tag-action)', '.topics-row-container',
+        '[data-octo-click="topic_click"]',
+        '[class*="TopicTag"]', 'a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])', 'a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])',
+        '#search-suggestions-dialog', 'query-builder', '[class*="QueryBuilder"]',
+        '.styled-input-content', '[data-type="filter-expression"]',
+        '[data-component="TextInputWithTokens.Token"]', '[class*="prc-Token-"]',
+        '[class*="HighlightedText"]', '.ref-selector-button-text-container', '[class*="RefSelectorText"]'
     ];
+    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
     const PROTECTED_SELECTOR_STR = PROTECTED_SELECTORS.join(',');
 
     const MARKDOWN_SELECTORS = [
@@ -13229,20 +13464,18 @@
         // Причина: GitHub Primitives держит aria-busy и loading-классы на обёртках
         // даже когда сам текст уже отрендерен и стабилен. Иначе «More items»,
         // «Open Copilot…» и подобные aria-label остаются навсегда английскими.
-        const isInteractive = (tag === 'button' || tag === 'a');
-        const isTextual = TEXTUAL_TAGS.has(tag);
-        if (!isInteractive && !isTextual) {
-            if (el.getAttribute && el.getAttribute('aria-busy') === 'true') return true;
-            if (el.closest && el.closest('[aria-busy="true"]')) return true;
-            // class*="loading" / class*="skeleton" убраны: слишком широко цепляют
-            if (el.closest && el.closest('[data-loading]')) return true;
-        }
+        // class*="loading" / class*="skeleton" убраны: слишком широко цепляют
 
         if (tag === 'a'
             && el.hasAttribute('data-hovercard-url')
             && el.classList.contains('user-mention')) return true;
         if (el.namespaceURI === 'http://www.w3.org/2000/svg') return true;
         if (el.closest && el.closest(PROTECTED_SELECTOR_STR)) return true;
+        const tokenListbox = el.closest && el.closest('[role="listbox"]');
+        if (tokenListbox && tokenListbox.id) {
+            const listboxOwner = document.querySelector('input[aria-controls="' + tokenListbox.id.replace(/"/g, '\\"') + '"]');
+            if (listboxOwner && listboxOwner.closest('[data-component="TextInputWithTokens"]')) return true;
+        }
         if (!markdownTranslationEnabled &&
             el.closest && el.closest(MARKDOWN_SELECTOR_STR)) return true;
         return false;
@@ -13317,7 +13550,10 @@
             const t2n = t2.replace(/\s+/g, ' ').trim();        // ← нормализуем
             const parentTag2 = parent.tagName.toLowerCase();
             const isShortLabel = ['button', 'a', 'summary', 'label', 'span'].includes(parentTag2);
-            if (!isShortLabel && t2.length < 15) return;
+            const hasTextSiblings = [...parent.childNodes].some(n =>
+                n !== node && n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+            const isLabelWord = /^[A-ZА-ЯЁ]/.test(t2n) && typeof exactTranslations[t2n] === 'string' && !hasTextSiblings;
+            if (!isShortLabel && t2.length < 15 && !isLabelWord) return;
             if (!exactTranslations[t2] && !lowerCaseTranslations[t2.toLowerCase()] &&
                 !exactTranslations[t2n] && !lowerCaseTranslations[t2n.toLowerCase()]) return;
         }
@@ -13377,6 +13613,7 @@
 
     function translateElementAttrs(el) {
         if (!el.hasAttribute) return;
+        if (el.matches && el.matches(TOPIC_TAG_SELECTOR)) return;
         let saved = null;
         for (const attr of TRANSLATABLE_ATTRS) {
             if (!el.hasAttribute(attr)) continue;
@@ -13570,24 +13807,35 @@
         const style = document.createElement('style');
         style.id = STYLE_ID;
         style.textContent = `
-            #__gh-ru-help-btn {
-                position: fixed; bottom: 24px; right: 24px;
-                width: 48px; height: 48px; border-radius: 50%;
-                background: #238636; color: #fff; font-size: 22px;
-                font-weight: bold; border: none; cursor: pointer;
-                z-index: 99999; box-shadow: 0 4px 12px rgba(0,0,0,.35);
-                transition: transform .15s, background .15s;
+            [data-component="ActionList.Item--DividerContainer"]:has(> [data-component="ActionList.TrailingVisual"] [data-component="Label"]) {
+                display: flex; flex-wrap: wrap; align-items: center;
             }
-            #__gh-ru-help-btn:hover { transform: scale(1.08); background: #2ea043; }
+            [data-component="ActionList.Item--DividerContainer"]:has(> [data-component="ActionList.TrailingVisual"] [data-component="Label"]) > [data-component="ActionList.Item.Label"] {
+                flex: 1 1 auto; overflow-wrap: normal; word-break: normal;
+            }
+            [data-component="ActionList.Item--DividerContainer"]:has(> [data-component="ActionList.TrailingVisual"] [data-component="Label"]) > [data-component="ActionList.TrailingVisual"] {
+                min-width: 0; max-width: 100%;
+            }
+            [data-component="ActionList.Item--DividerContainer"]:has(> [data-component="ActionList.TrailingVisual"] [data-component="Label"]) > [data-component="ActionList.TrailingVisual"] [data-component="Label"] {
+                white-space: normal; max-width: 100%; height: auto;
+                min-height: 20px; padding-block: 2px; line-height: 1.25;
+            }
+            #__gh-ru-help-btn,
             #__gh-ru-lang-btn {
-                position: fixed; bottom: 24px; right: 80px;
-                width: 40px; height: 40px; border-radius: 50%;
-                background: #30363d; color: #e6edf3; font-size: 16px;
-                border: 1px solid #444c56; cursor: pointer;
-                z-index: 99999; box-shadow: 0 4px 12px rgba(0,0,0,.35);
-                transition: transform .15s;
+                background: var(--bgColor-default, var(--color-canvas-default, Canvas));
+                color: var(--fgColor-muted, var(--color-fg-muted, GrayText));
+                border: 1px solid var(--borderColor-muted, var(--color-border-muted, rgba(128,128,128,.25)));
+                box-shadow: none; cursor: pointer; opacity: .7;
+                position: fixed; z-index: 99999; border-radius: 50%;
+                transition: opacity .15s, background .15s;
             }
-            #__gh-ru-lang-btn:hover { transform: scale(1.08); }
+            #__gh-ru-help-btn { bottom: 24px; right: 24px; width: 48px; height: 48px; font-size: 22px; font-weight: bold; }
+            #__gh-ru-lang-btn { bottom: 24px; right: 80px; width: 40px; height: 40px; font-size: 16px; }
+            #__gh-ru-help-btn:hover,
+            #__gh-ru-lang-btn:hover {
+                opacity: 1;
+                background: var(--bgColor-muted, var(--color-canvas-subtle, Canvas));
+            }
             .gh-ru-backdrop {
                 position: fixed; inset: 0; background: rgba(0,0,0,.6);
                 z-index: 100000; display: flex; align-items: center;
@@ -13656,7 +13904,7 @@
         const dialog = document.createElement('div');
         dialog.className = 'gh-ru-dialog';
         dialog.innerHTML = `
-            <h2>📘 Быстрый старт на GitHub</h2>
+            <h2>📘 Справка по Git</h2>
             <h3>1. Создать репозиторий</h3>
             <p>Кнопка <b>+</b> в правом верхнем углу → <b>New repository</b>. Это папка проекта на GitHub.</p>
             <h3>2. Загрузить файлы</h3>
@@ -13696,7 +13944,7 @@
                 <span id="__gh-ru-collect-info" style="margin-left:8px;color:#8b949e;font-size:12px"></span>
             </p>
 
-            <button class="gh-ru-close">Понятно, закрыть</button>
+            <button class="gh-ru-close">Закрыть</button>
         `;
 
         const list = dialog.querySelector('#__gh-ru-glossary-list');
@@ -13769,7 +14017,7 @@
         const btn = document.createElement('button');
         btn.id = '__gh-ru-help-btn';
         btn.textContent = '?';
-        btn.title = 'Помощь по GitHub на русском';
+        btn.title = 'Git Help / Справка по Git';
         btn.addEventListener('click', showHelpModal);
         document.body.appendChild(btn);
     }
@@ -13826,7 +14074,7 @@
         const btn = document.createElement('button');
         btn.id = '__gh-ru-lang-btn';
         btn.textContent = '🇷🇺';
-        btn.title = 'Показать оригинал (English) / Вернуть русский';
+        btn.title = 'English / Русский';
         btn.addEventListener('click', () => {
             translationEnabled = !translationEnabled;
             if (translationEnabled) {
@@ -13837,6 +14085,7 @@
                 addFilterTips();
                 translateBlankslate();        // v7.0
                 translateFormElements();      // v7.0
+                runPostTranslationHooks();
             } else {
                 btn.textContent = '🇬🇧';
                 restoreOriginals(document.body);
@@ -13903,6 +14152,1181 @@
         }
     }
 
+    function hasCyrillic(text) {
+        return /[а-яА-ЯёЁ]/.test(text);
+    }
+
+    const translationCache = new Map();
+    function translateCached(text) {
+        if (translationCache.has(text)) return translationCache.get(text);
+        if (translationCache.size > 5000) translationCache.clear();
+        const result = translateText(text);
+        translationCache.set(text, result);
+        return result;
+    }
+
+    function normalizeText(text) {
+        return text.replace(/\s+/g, ' ').trim();
+    }
+
+    function getOriginalText(el) {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        let result = '';
+        let node;
+        while ((node = walker.nextNode())) {
+            const original = originalTexts.get(node);
+            result += (typeof original === 'string') ? original : node.textContent;
+        }
+        return result;
+    }
+
+    function getOriginalHtml(el) {
+        const clone = el.cloneNode(true);
+        const src = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const dst = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT);
+        while (src.nextNode() && dst.nextNode()) {
+            const original = originalTexts.get(src.currentNode);
+            if (typeof original === 'string') dst.currentNode.textContent = original;
+        }
+        return clone.innerHTML;
+    }
+
+    function setTextNodeTranslated(node, text) {
+        if (normalizeText(node.textContent) === normalizeText(text)) return;
+        if (!originalTexts.has(node)) originalTexts.set(node, node.textContent);
+        node.textContent = text;
+    }
+
+    function setElementTextRecorded(el, text) {
+        if (normalizeText(el.textContent) === normalizeText(text)) return;
+        if (!originalTexts.has(el)) originalTexts.set(el, getOriginalHtml(el));
+        el.textContent = text;
+    }
+
+    function setAttrRecorded(el, attr, value) {
+        if (el.getAttribute(attr) === value) return;
+        const existing = originalAttrs.get(el) || {};
+        if (!(attr in existing)) existing[attr] = el.getAttribute(attr);
+        originalAttrs.set(el, existing);
+        el.setAttribute(attr, value);
+    }
+
+    // Функция для проверки имени пользователя
+    function isUsername(text) {
+        if (!text || text.length < 2) return false;
+        const reservedNames = ['true', 'false', 'null', 'undefined', 'src', 'href', 'http', 'https', 'www', 'com', 'org', 'net', 'git', 'github'];
+        if (reservedNames.includes(text.toLowerCase())) return false;
+        return /^[a-zA-Z0-9][a-zA-Z0-9-]{0,38}[a-zA-Z0-9]$/.test(text);
+    }
+
+    // Функция для blankslate блоков
+    function translateBlankslateWithUsernames() {
+        const blankslateHeadings = document.querySelectorAll('.blankslate-heading');
+
+        blankslateHeadings.forEach(heading => {
+            const originalText = getOriginalText(heading);
+            if (hasCyrillic(originalText)) return;
+
+            const normalizedText = normalizeText(originalText);
+
+            // Перевод "username doesn't have any public repositories yet."
+            const match = normalizedText.match(/^(.+?)\s+doesn't have any public repositories yet\.?$/i);
+            if (match) {
+                const username = match[1];
+                if (isUsername(username)) {
+                    setElementTextRecorded(heading, `${username} ещё не имеет публичных репозиториев.`);
+                    return;
+                }
+            }
+        });
+
+        // Перевод span активности
+        const activitySpans = document.querySelectorAll('.text-center.color-fg-muted.tmp-pt-3 span, .color-fg-muted.m-0');
+
+        activitySpans.forEach(span => {
+            const originalText = getOriginalText(span);
+            if (hasCyrillic(originalText)) return;
+
+            const normalizedText = normalizeText(originalText);
+
+            // Перевод "username has no activity yet for this period."
+            const match = normalizedText.match(/^(.+?)\s+has no activity yet for this period\.?$/i);
+            if (match) {
+                const username = match[1];
+                if (isUsername(username)) {
+                    setElementTextRecorded(span, `${username} пока не имеет активности за этот период.`);
+                    return;
+                }
+            }
+
+            // Перевод "username had no activity during this period."
+            const hadNoActivityMatch = normalizedText.match(/^(.+?)\s+had no activity during this period\.?$/i);
+            if (hadNoActivityMatch) {
+                const username = hadNoActivityMatch[1];
+                if (isUsername(username)) {
+                    setElementTextRecorded(span, `${username} не имел активности за этот период.`);
+                    return;
+                }
+            }
+        });
+    }
+
+    // Функция для перевода событий в ленте
+    // События в ленте
+    const timelineVerbTranslations = {
+        "commented": "прокомментировал",
+        "assigned": "назначил",
+        "locked": "заблокировал",
+        "mentioned": "упомянул",
+        "pinned": "закрепил",
+        "unlabeled": "удалил метку",
+        "unlocked": "разблокировал",
+        "reopened": "вновь открытый"
+    };
+
+    let timelineEventRules = null;
+    let timelineEventExact = null;
+    function getTimelineEventExact() {
+        getTimelineEventRules();
+        return timelineEventExact;
+    }
+
+    function getTimelineEventRules() {
+        if (timelineEventRules) return timelineEventRules;
+
+        // Список индикаторов событий в ленте
+        const eventIndicators = [
+            'commit', 'pull request', 'title', 'closed', 'opened', 'assigned',
+            'commented', 'completed', 'converted', 'draft', 'labeled', 'locked',
+            'mentioned', 'milestoned', 'pinned', 'renamed', 'requested',
+            'unassigned', 'unlabeled', 'unlocked', 'unpinned', 'removed', 'demilestoned'
+        ];
+
+        const timelineEventSource = Object.assign({}, exactTranslations, timelineVerbTranslations);
+        const timelineEventKeys = Object.keys(timelineEventSource)
+            .filter(key => {
+                if (typeof key !== 'string') return false;
+                if (key.length < 3) return false;
+                if (key.includes('{0}') || key.includes(' (')) return false;
+                if (hasCyrillic(key)) return false;
+                return eventIndicators.some(indicator => key.toLowerCase().includes(indicator.toLowerCase()));
+            });
+        timelineEventExact = new Map(timelineEventKeys.map(key => [normalizeText(key), timelineEventSource[key]]));
+        timelineEventRules = timelineEventKeys
+            .slice()
+            .sort((a, b) => b.length - a.length)
+            .map(key => ({
+                re: new RegExp('(?<![\\p{L}\\d])' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\p{L}\\d])', 'gu'),
+                value: timelineEventSource[key]
+            }));
+
+        return timelineEventRules;
+    }
+
+    function translateTimelineEvents() {
+        const eventContainers = document.querySelectorAll('.row-module__timelineBodyContent__nmY90, .ActivityHeader-module__footer__HD8mP, .IssueBodyHeader-module__footerSection__Df7HB');
+        const eventRules = eventContainers.length ? getTimelineEventRules() : [];
+
+        eventContainers.forEach(container => {
+            const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+            const textNodes = [];
+            while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+            textNodes.forEach(node => {
+                const text = node.textContent;
+                if (!text || hasCyrillic(text)) return;
+                if (!node.parentElement || shouldIgnoreElement(node.parentElement)) return;
+
+                let newText = text;
+                eventRules.forEach(rule => {
+                    newText = newText.replace(rule.re, rule.value);
+                });
+
+                if (newText !== text) setTextNodeTranslated(node, newText);
+            });
+        });
+
+        const classicEventContainers = document.querySelectorAll('.timeline-comment-header h3, .TimelineItem-body');
+        if (classicEventContainers.length) {
+            const exactEvents = getTimelineEventExact();
+            classicEventContainers.forEach(container => {
+                const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+                const textNodes = [];
+                while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+                textNodes.forEach(node => {
+                    const text = node.textContent;
+                    if (!text || hasCyrillic(text)) return;
+                    const value = exactEvents.get(normalizeText(text));
+                    if (value === undefined) return;
+                    if (!node.parentElement || shouldIgnoreElement(node.parentElement)) return;
+                    const leading = text.match(/^\s*/)[0];
+                    const trailing = text.match(/\s*$/)[0];
+                    setTextNodeTranslated(node, leading + value + trailing);
+                });
+            });
+        }
+
+        const safeShortWords = ['completed', 'not planned', 'duplicate'];
+        const reasonLinks = document.querySelectorAll('.ClosedEvent-module__stateReasonLink__X7TkZ');
+        reasonLinks.forEach(link => {
+            const text = link.textContent.trim();
+            if (safeShortWords.includes(text)) {
+                const translated = translateCached(text);
+                if (translated !== text) setElementTextRecorded(link, translated);
+            }
+        });
+    }
+
+    // Функция для перевода числовых ссылок
+    function translatePRLinks() {
+        const prLinks = document.querySelectorAll('a[href*="/pulls?"]');
+
+        prLinks.forEach(link => {
+            const text = link.textContent.replace(/\s+/g, ' ').trim();
+
+            // Проверяем паттерн "X Open"
+            let match = text.match(/^(\d+)\s+Open$/);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                const translated = `${num} ${plural(num, 'Открытый', 'Открытых', 'Открытых')}`;
+
+                link.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === `${num} Open`) {
+                        setTextNodeTranslated(node, ` ${translated}`);
+                    }
+                });
+                return;
+            }
+
+            // Проверяем паттерн "X Closed"
+            match = text.match(/^(\d+)\s+Closed$/);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                const translated = `${num} ${plural(num, 'Закрытый', 'Закрытых', 'Закрытых')}`;
+
+                link.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === `${num} Closed`) {
+                        setTextNodeTranslated(node, ` ${translated}`);
+                    }
+                });
+            }
+        });
+    }
+
+    function translateSVGGraphs() {
+        // Перевод всех текстов внутри SVG элементов
+        const allSvgTexts = document.querySelectorAll('svg text');
+        allSvgTexts.forEach(text => {
+            const content = text.textContent.trim();
+            if (!content || hasCyrillic(content)) return;
+            const translated = translateCached(content);
+            if (translated !== content) setElementTextRecorded(text, translated);
+        });
+
+        // Перевод всех title внутри SVG
+        const allSvgTitles = document.querySelectorAll('svg title');
+        allSvgTitles.forEach(title => {
+            const content = title.textContent;
+            if (!content || hasCyrillic(content)) return;
+            const translated = translateCached(content);
+            if (translated !== content) setElementTextRecorded(title, translated);
+        });
+
+        // Перевод всех aria-label внутри SVG
+        const allSvgElements = document.querySelectorAll('svg, svg *');
+        allSvgElements.forEach(element => {
+            const ariaLabel = element.getAttribute('aria-label');
+            if (!ariaLabel || hasCyrillic(ariaLabel)) return;
+            const translated = translateCached(ariaLabel);
+            if (translated !== ariaLabel) setAttrRecorded(element, 'aria-label', translated);
+        });
+
+        // Перевод aria-label у Progress элементов
+        const progressElements = document.querySelectorAll('.Progress[role="img"]');
+        progressElements.forEach(el => {
+            const ariaLabel = el.getAttribute('aria-label');
+            if (ariaLabel && !hasCyrillic(ariaLabel)) {
+                const match = ariaLabel.match(/^(\d+)% of commits in (\w+) were made to (.+)$/);
+                if (match) {
+                    const percent = match[1];
+                    const month = match[2];
+                    const repo = match[3];
+                    const monthTrans = translateCached(month);
+                    setAttrRecorded(el, 'aria-label', `${percent}% коммитов в ${monthTrans} было сделано в ${repo}`);
+                } else {
+                    const translated = translateCached(ariaLabel);
+                    if (translated !== ariaLabel) setAttrRecorded(el, 'aria-label', translated);
+                }
+            }
+        });
+
+        // Перевод текста "Activity overview"
+        const activityHeaders = document.querySelectorAll('h3.tmp-mb-3.text-normal.f5');
+        activityHeaders.forEach(header => {
+            const text = header.textContent.replace(/\s+/g, ' ').trim();
+            if (text === 'Activity overview') {
+                setElementTextRecorded(header, 'Обзор активности');
+            }
+        });
+
+        // Перевод текста "Contributed to"
+        const contributedTexts = document.querySelectorAll('.wb-break-word');
+        contributedTexts.forEach(el => {
+            const text = el.textContent.trim();
+            if (!text.startsWith('Contributed to')) return;
+            const label = translateCached('Contributed to');
+            if (label === 'Contributed to') return;
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+            let node;
+            while ((node = walker.nextNode())) {
+                if (node.textContent.trim().startsWith('Contributed to')) {
+                    setTextNodeTranslated(node, node.textContent.replace('Contributed to', label));
+                    break;
+                }
+            }
+        });
+
+        // Перевод блока с количеством вкладов
+        const contributionDesc = document.querySelector('#js-contribution-activity-description');
+        if (contributionDesc) {
+            const text = normalizeText(getOriginalText(contributionDesc));
+
+            let match = text.match(/^(\d+(?:,\d+)?)\s+contributions?\s+in\s+the\s+last\s+year$/i);
+            if (match) {
+                const num = parseInt(match[1].replace(/,/g, ''), 10);
+                const word = plural(num, 'вклад', 'вклада', 'вкладов');
+                setElementTextRecorded(contributionDesc, `${num.toLocaleString()} ${word} за последний год`);
+            }
+
+            match = text.match(/^(\d+(?:,\d+)?)\s+contributions?\s+in\s+(\d{4})$/i);
+            if (match) {
+                const num = parseInt(match[1].replace(/,/g, ''), 10);
+                const year = match[2];
+                const word = plural(num, 'вклад', 'вклада', 'вкладов');
+                setElementTextRecorded(contributionDesc, `${num.toLocaleString()} ${word} в ${year} году`);
+            }
+        }
+
+        // Перевод блока с количеством коммитов
+        const commitLinks = document.querySelectorAll('a[href*="/commits?"]');
+        commitLinks.forEach(link => {
+            if (link.children.length) return;
+            const text = link.textContent.trim();
+            const match = text.match(/^(\d+)\s+commits?$/);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                const commitWord = plural(num, 'коммит', 'коммита', 'коммитов');
+                setElementTextRecorded(link, `${num} ${commitWord}`);
+            }
+        });
+
+        // Перевод блока активности
+        const activitySpans = document.querySelectorAll('span.color-fg-default.ws-normal.text-left, span.float-left.ws-normal.text-left.color-fg-default');
+        activitySpans.forEach(span => {
+            if (span.children.length) return;
+            const text = normalizeText(getOriginalText(span));
+
+            let match = text.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (match) {
+                const prs = parseInt(match[1], 10);
+                const repos = parseInt(match[2], 10);
+                const prWord = plural(prs, 'запрос на слияние', 'запроса на слияние', 'запросов на слияние');
+                const reposWord = plural(repos, 'репозитории', 'репозиториях', 'репозиториях');
+                setElementTextRecorded(span, `Открыто ${prs} ${prWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            match = text.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (match) {
+                const issues = parseInt(match[1], 10);
+                const repos = parseInt(match[2], 10);
+                const issueWord = plural(issues, 'задачу', 'задачи', 'задач');
+                const reposWord = plural(repos, 'репозитории', 'репозиториях', 'репозиториях');
+                setElementTextRecorded(span, `Открыто ${issues} ${issueWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            match = text.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (match) {
+                const commits = parseInt(match[1], 10);
+                const repos = parseInt(match[2], 10);
+                const commitWord = plural(commits, 'коммит', 'коммита', 'коммитов');
+                const reposWord = plural(repos, 'репозитории', 'репозиториях', 'репозиториях');
+                setElementTextRecorded(span, `Создано ${commits} ${commitWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            match = text.match(/^Created\s+(\d+)\s+repository$/i);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                const word = plural(num, 'репозиторий', 'репозитория', 'репозиториев');
+                setElementTextRecorded(span, `Создано ${num} ${word}`);
+                return;
+            }
+
+            match = text.match(/^Created\s+(\d+)\s+repositories$/i);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                const word = plural(num, 'репозиторий', 'репозитория', 'репозиториев');
+                setElementTextRecorded(span, `Создано ${num} ${word}`);
+            }
+        });
+    }
+
+    // Перевод data-disable-with атрибута
+    function translateDisableWithAttributes() {
+        // Перевод value и input
+        document.querySelectorAll('input[type="submit"], input[type="button"]').forEach(el => {
+            const value = el.getAttribute('value');
+            if (!value || hasCyrillic(value)) return;
+            const translated = translateCached(value);
+            if (translated !== value) setAttrRecorded(el, 'value', translated);
+        });
+
+        // Перевод data-disable-with атрибута
+        document.querySelectorAll('[data-disable-with]').forEach(el => {
+            const disableText = el.getAttribute('data-disable-with');
+            if (!disableText || hasCyrillic(disableText)) return;
+            const translated = translateCached(disableText);
+            if (translated !== disableText) setAttrRecorded(el, 'data-disable-with', translated);
+        });
+    }
+
+    // Функция для автоматического перевода с правильными склонениями
+    function translateNumberedText(text) {
+        // Вспомогательная функция для склонений
+        function plural(num, form1, form2, form5) {
+            const n = Math.abs(num);
+            const lastDigit = n % 10;
+            const lastTwoDigits = n % 100;
+
+            if (lastTwoDigits >= 11 && lastTwoDigits <= 19) {
+                return form5;
+            }
+            if (lastDigit === 1) {
+                return form1;
+            }
+            if (lastDigit >= 2 && lastDigit <= 4) {
+                return form2;
+            }
+            return form5;
+        }
+
+        // Очистка текста от лишних пробелов и символов
+        const cleanText = text.replace(/\s+/g, ' ').trim();
+
+        // Проверяем паттерн "X Open"
+        const openMatch = text.match(/^(\d+)\s+Open$/);
+        if (openMatch) {
+            const num = parseInt(openMatch[1], 10);
+            if (plural(num, 1, 2, 5) === 1) {
+                return `${num} Открытый`;
+            } else if (plural(num, 1, 2, 5) === 2) {
+                return `${num} Открытых`;
+            } else {
+                return `${num} Открытых`;
+            }
+        }
+
+        // Проверяем паттерн "X Closed"
+        const closedMatch = text.match(/^(\d+)\s+Closed$/);
+        if (closedMatch) {
+            const num = parseInt(closedMatch[1], 10);
+            if (plural(num, 1, 2, 5) === 1) {
+                return `${num} Закрытый`;
+            } else if (plural(num, 1, 2, 5) === 2) {
+                return `${num} Закрытых`;
+            } else {
+                return `${num} Закрытых`;
+            }
+        }
+
+        // Проверяем паттерн "Edited X time"
+        const editedMatch = cleanText.match(/^Edited\s+(\d+)\s+time?s?$/i);
+        if (editedMatch) {
+            const num = parseInt(editedMatch[1], 10);
+            if (plural(num, 1, 2, 5) === 1) {
+                return `Отредактировано ${num} раз`;
+            } else if (plural(num, 1, 2, 5) === 2) {
+                return `Отредактировано ${num} раза`;
+            } else {
+                return `Отредактировано ${num} раз`;
+            }
+        }
+
+        // Проверяем паттерн "X Draft"
+        const draftMatch = text.match(/^(\d+)\s+Draft$/);
+        if (draftMatch) {
+            const num = parseInt(draftMatch[1], 10);
+            if (plural(num, 1, 2, 5) === 1) {
+                return `${num} Черновик`;
+            } else if (plural(num, 1, 2, 5) === 2) {
+                return `${num} Черновика`;
+            } else {
+                return `${num} Черновиков`;
+            }
+        }
+
+        // Проверяем паттерн "X Published"
+        const publishedMatch = text.match(/^(\d+)\s+Published$/);
+        if (publishedMatch) {
+            const num = parseInt(publishedMatch[1], 10);
+            if (plural(num, 1, 2, 5) === 1) {
+                return `${num} Опубликованный`;
+            } else if (plural(num, 1, 2, 5) === 2) {
+                return `${num} Опубликованных`;
+            } else {
+                return `${num} Опубликованных`;
+            }
+        }
+
+        // Проверяем паттерн "Discard X commits"
+        const discardMatch = cleanText.match(/^Discard\s+(\d+)\s+commits?$/i);
+        if (discardMatch) {
+            const num = parseInt(discardMatch[1], 10);
+            const commitWord = (plural(num, 1, 2, 5) === 1) ? 'коммит' : ((plural(num, 1, 2, 5) === 2) ? 'коммита' : 'коммитов');
+            return `Отменить ${num} ${commitWord}`;
+        }
+
+        // Проверяем паттерн "X contributions"
+        const contributionsMatch = text.match(/^(\d+(?:,\d+)?)\s+contributions?\s+in\s+the\s+last\s+year$/i);
+        if (contributionsMatch) {
+            const num = parseInt(contributionsMatch[1].replace(/,/g, ''), 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'вклад' : ((plural(num, 1, 2, 5) === 2) ? 'вклада' : 'вкладов');
+            return `${num.toLocaleString()} ${word} за последний год`;
+        }
+
+        const contributionsYearMatch = text.match(/^(\d+(?:,\d+)?)\s+contributions?\s+in\s+(\d{4})$/i);
+        if (contributionsYearMatch) {
+            const num = parseInt(contributionsYearMatch[1].replace(/,/g, ''), 10);
+            const year = contributionsYearMatch[2];
+            const word = (plural(num, 1, 2, 5) === 1) ? 'вклад' : ((plural(num, 1, 2, 5) === 2) ? 'вклада' : 'вкладов');
+            return `${num.toLocaleString()} ${word} в ${year} году`;
+        }
+
+        const contributionsOnlyMatch = text.match(/^(\d+(?:,\d+)?)\s+contributions?$/i);
+        if (contributionsOnlyMatch) {
+            const num = parseInt(contributionsOnlyMatch[1].replace(/,/g, ''), 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'вклад' : ((plural(num, 1, 2, 5) === 2) ? 'вклада' : 'вкладов');
+            return `${num.toLocaleString()} ${word}`;
+        }
+
+        // Проверяем паттерн "X contributions in private repositories"
+        const privateContribMatch = cleanText.match(/^(\d+)\s+contributions?\s+in\s+private\s+repositories$/i);
+        if (privateContribMatch) {
+            const num = parseInt(privateContribMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'вклад' : ((plural(num, 1, 2, 5) === 2) ? 'вклада' : 'вкладов');
+            return `${num} ${word} в приватных репозиториях`;
+        }
+
+        // Проверяем паттерн "Created X commits in Y repositories"
+        const normalizedText = text.replace(/\s+/g, ' ').trim();
+
+        const openedPrMatch = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (openedPrMatch) {
+            const prs = parseInt(openedPrMatch[1], 10);
+            const repos = parseInt(openedPrMatch[2], 10);
+            const prWord = (plural(prs, 1, 2, 5) === 1) ? 'запрос на слияние' : ((plural(prs, 1, 2, 5) === 2) ? 'запроса на слияние' : 'запросов на слияние');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Открыто ${prs} ${prWord} в ${repos} ${reposWord}`;
+        }
+
+        const openedIssueMatch = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (openedIssueMatch) {
+            const issues = parseInt(openedIssueMatch[1], 10);
+            const repos = parseInt(openedIssueMatch[2], 10);
+            const issueWord = (plural(issues, 1, 2, 5) === 1) ? 'задачу' : ((plural(issues, 1, 2, 5) === 2) ? 'задачи' : 'задач');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Открыто ${issues} ${issueWord} в ${repos} ${reposWord}`;
+        }
+
+        const prOnlyMatch = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request$/i);
+        if (prOnlyMatch) {
+            const num = parseInt(prOnlyMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'запрос на слияние' : ((plural(num, 1, 2, 5) === 2) ? 'запроса на слияние' : 'запросов на слияние');
+            return `Открыто ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "Opened X issue"
+        const issueOnlyMatch = normalizedText.match(/^Opened\s+(\d+)\s+issue$/i);
+        if (issueOnlyMatch) {
+            const num = parseInt(issueOnlyMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'задачу' : ((plural(num, 1, 2, 5) === 2) ? 'задачи' : 'задач');
+            return `Открыто ${num} ${word}`;
+        }
+
+        const commitsInReposMatch = normalizedText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (commitsInReposMatch) {
+            const commits = parseInt(commitsInReposMatch[1], 10);
+            const repos = parseInt(commitsInReposMatch[2], 10);
+            const commitWord = (plural(commits, 1, 2, 5) === 1) ? 'коммит' : ((plural(commits, 1, 2, 5) === 2) ? 'коммита' : 'коммитов');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Создано ${commits} ${commitWord} в ${repos} ${reposWord}`;
+        }
+
+        // Проверяем паттерн "Created X repository"
+        const createdRepoMatch = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (createdRepoMatch) {
+            const num = parseInt(createdRepoMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+            return `Создано ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "Created X repositories"
+        const createdReposMatch = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (createdReposMatch) {
+            const num = parseInt(createdReposMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+            return `Создано ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X commits"
+        const commitsMatch = normalizedText.match(/^(\d+)\s+commits?$/i);
+        if (commitsMatch) {
+            const num = parseInt(commitsMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'коммит' : ((plural(num, 1, 2, 5) === 2) ? 'коммита' : 'коммитов');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X repositories"
+        const reposMatch = normalizedText.match(/^(\d+)\s+repositories?$/i);
+        if (reposMatch) {
+            const num = parseInt(reposMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "Created X commits in Y repositories"
+        const commitsInReposMatchNew = normalizedText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositories?$/i);
+        if (commitsInReposMatchNew) {
+            const commits = parseInt(commitsInReposMatchNew[1], 10);
+            const repos = parseInt(commitsInReposMatchNew[2], 10);
+            const commitWord = (plural(commits, 1, 2, 5) === 1) ? 'коммит' : ((plural(commits, 1, 2, 5) === 2) ? 'коммита' : 'коммитов');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Создано ${commits} ${commitWord} в ${repos} ${reposWord}`;
+        }
+
+        // Проверяем паттерн "Opened X other pull requests in Y repositories"
+        const openedPrsInReposMatch = normalizedText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (openedPrsInReposMatch) {
+            const prs = parseInt(openedPrsInReposMatch[1], 10);
+            const repos = parseInt(openedPrsInReposMatch[2], 10);
+            const prWord = (plural(prs, 1, 2, 5) === 1) ? 'запрос на извлечение' : ((plural(prs, 1, 2, 5) === 2) ? 'запроса на извлечение' : 'запросов на извлечение');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Открыто ${prs} других ${prWord} в ${repos} ${reposWord}`;
+        }
+
+        // Проверяем паттерн "Opened X pull request in Y repositories"
+        const openedPrMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+pull\s+request\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (openedPrMatchNew) {
+            const prs = parseInt(openedPrMatchNew[1], 10);
+            const repos = parseInt(openedPrMatchNew[2], 10);
+            const prWord = (plural(prs, 1, 2, 5) === 1) ? 'запрос на слияние' : ((plural(prs, 1, 2, 5) === 2) ? 'запроса на слияние' : 'запросов на слияние');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Открыто ${prs} ${prWord} в ${repos} ${reposWord}`;
+        }
+
+        // Проверяем паттерн "Opened X issue in Y repositories"
+        const openedIssueMatchNew = normalizedText.match(/^Opened\s+(\d+)\s+issue\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (openedIssueMatchNew) {
+            const issues = parseInt(openedIssueMatchNew[1], 10);
+            const repos = parseInt(openedIssueMatchNew[2], 10);
+            const issueWord = (plural(issues, 1, 2, 5) === 1) ? 'задачу' : ((plural(issues, 1, 2, 5) === 2) ? 'задачи' : 'задач');
+            const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+            return `Открыто ${issues} ${issueWord} в ${repos} ${reposWord}`;
+        }
+
+        // Проверяем паттерн "Created X repositories"
+        const createdReposMatchNew = normalizedText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
+        if (createdReposMatchNew) {
+            const num = parseInt(createdReposMatchNew[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+            return `Создано ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "Created X repository"
+        const createdRepoMatchNew = normalizedText.match(/^Created\s+(\d+)\s+repository$/i);
+        if (createdRepoMatchNew) {
+            const num = parseInt(createdRepoMatchNew[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+            return `Создано ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X releases"
+        const releasesPlainMatch = cleanText.match(/^(\d+)\s+releases$/i);
+        if (releasesPlainMatch) {
+            const num = parseInt(releasesPlainMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'релиз' : ((plural(num, 1, 2, 5) === 2) ? 'релиза' : 'релизов');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "+ X releases"
+        const releasesMatch = normalizedText.match(/^\+\s+(\d+)\s+releases$/i);
+        if (releasesMatch) {
+            const num = parseInt(releasesMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'релиз' : ((plural(num, 1, 2, 5) === 2) ? 'релиза' : 'релизов');
+            return `+ ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X deployments"
+        const deploymentsPlainMatch = cleanText.match(/^(\d+)\s+deployments$/i);
+        if (deploymentsPlainMatch) {
+            const num = parseInt(deploymentsPlainMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'развертывание' : ((plural(num, 1, 2, 5) === 2) ? 'развертывания' : 'развертываний');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "+ X deployments"
+        const deploymentsMatch = normalizedText.match(/^\+\s+(\d+)\s+deployments$/i);
+        if (deploymentsMatch) {
+            const num = parseInt(deploymentsMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'развертывание' : ((plural(num, 1, 2, 5) === 2) ? 'развертывания' : 'развертываний');
+            return `+ ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X contributors"
+        const contributorsPlainMatch = cleanText.match(/^(\d+)\s+contributors$/i);
+        if (contributorsPlainMatch) {
+            const num = parseInt(contributorsPlainMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'участник' : ((plural(num, 1, 2, 5) === 2) ? 'участника' : 'участников');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "+ X contributors"
+        const contributorsMatch = normalizedText.match(/^\+\s+(\d+)\s+contributors$/i);
+        if (contributorsMatch) {
+            const num = parseInt(contributorsMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'участник' : ((plural(num, 1, 2, 5) === 2) ? 'участника' : 'участников');
+            return `+ ${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X packages"
+        const packagesMatch = cleanText.match(/^(\d+)\s+packages$/i);
+        if (packagesMatch) {
+            const num = parseInt(packagesMatch[1], 10);
+            const word = (plural(num, 1, 2, 5) === 1) ? 'пакет' : ((plural(num, 1, 2, 5) === 2) ? 'пакета' : 'пакетов');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X files"
+        const filesMatch = cleanText.match(/^(\d+)\s+files?$/i);
+        if (filesMatch) {
+            const num = parseInt(filesMatch[1], 10);
+            return `${num} ${plural(num, 'файл', 'файла', 'файлов')}`;
+        }
+
+        // Проверяем паттерн "X forks"
+        const forksMatch = cleanText.match(/^(\d+)\s+forks?$/i);
+        if (forksMatch) {
+            const num = parseInt(forksMatch[1], 10);
+            return `${num} ${plural(num, 'форк', 'форка', 'форков')}`;
+        }
+
+        // Проверяем паттерн "X comments"
+        const commentsMatch = cleanText.match(/^(\d+)\s+comments?$/i);
+        if (commentsMatch) {
+            const num = parseInt(commentsMatch[1], 10);
+            return `${num} ${plural(num, 'комментарий', 'комментария', 'комментариев')}`;
+        }
+
+        // Проверяем паттерн "X stars"
+        const starsMatch = cleanText.match(/^(\d+)\s+stars?$/i);
+        if (starsMatch) {
+            const num = parseInt(starsMatch[1], 10);
+            return `${num} ${plural(num, 'звезда', 'звезды', 'звёзд')}`;
+        }
+
+        // Проверяем паттерн "X% used"
+        const percentUsedMatch = cleanText.match(/^(\d+(?:\.\d+)?)%\s+used$/i);
+        if (percentUsedMatch) {
+            const num = percentUsedMatch[1];
+            return `${num}% использовано`;
+        }
+
+        // Проверяем паттерн "X workflow runs"
+        const workflowRunsMatch = cleanText.match(/^(\d+)\s+workflow\s+runs?$/i);
+        if (workflowRunsMatch) {
+            const num = parseInt(workflowRunsMatch[1], 10);
+            return `${num} ${plural(num, 'запуск рабочего процесса', 'запуска рабочего процесса', 'запусков рабочих процессов')}`;
+        }
+
+        // Проверяем паттерн "X cache"
+        const cacheMatch = cleanText.match(/^(\d+)\s+cache$/i);
+        if (cacheMatch) {
+            const num = parseInt(cacheMatch[1], 10);
+            return `${num} ${plural(num, 'кэш', 'кэша', 'кэшей')}`;
+        }
+
+        // Проверяем паттерн "X available runner"
+        const runnerMatch = cleanText.match(/^(\d+)\s+available\s+runners?$/i);
+        if (runnerMatch) {
+            const num = parseInt(runnerMatch[1], 10);
+            return `${num} ${plural(num, 'доступный раннер', 'доступных раннера', 'доступных раннеров')}`;
+        }
+
+        // Проверяем паттерн "X change(s) requested by reviewers with write access."
+        const changeRequestedMatch = cleanText.match(/^(\d+)\s+changes?\s+requested\s+by\s+reviewers\s+with\s+write\s+access\.?$/i);
+        if (changeRequestedMatch) {
+            const num = parseInt(changeRequestedMatch[1], 10);
+            const word = plural(num, 'изменение', 'изменения', 'изменений');
+            const hasDot = cleanText.endsWith('.');
+            return `${num} ${word} запрошено рецензентами с правом на запись${hasDot ? '.' : ''}`;
+        }
+
+        // Проверяем паттерн "X requested change(s)"
+        const requestedChangeMatch = cleanText.match(/^(\d+)\s+requested\s+changes?$/i);
+        if (requestedChangeMatch) {
+            const num = parseInt(requestedChangeMatch[1], 10);
+            const word = plural(num, 'запрошенное изменение', 'запрошенных изменения', 'запрошенных изменений');
+            return `${num} ${word}`;
+        }
+
+        // Проверяем паттерн "X replies"
+        const repliesMatch = cleanText.match(/^(\d+)\s+repl(?:y|ies)$/i);
+        if (repliesMatch) {
+            const num = parseInt(repliesMatch[1], 10);
+            return `${num} ${plural(num, 'ответ', 'ответа', 'ответов')}`;
+        }
+
+        // Проверяем паттерн "X participants"
+        const participantsMatch = cleanText.match(/^(\d+)\s+participants?$/i);
+        if (participantsMatch) {
+            const num = parseInt(participantsMatch[1], 10);
+            return `${num} ${plural(num, 'участник', 'участника', 'участников')}`;
+        }
+
+        // Проверяем паттерн "Opened their first issue on GitHub in {owner}/{repo}"
+        const firstIssueMatch = cleanText.match(/^Opened\s+their\s+first\s+issue\s+on\s+GitHub\s+in\s+([\w.-]+\/[\w.-]+)$/i);
+        if (firstIssueMatch) {
+            const repoPath = firstIssueMatch[1];
+            return `Открыл свою первую проблему на GitHub в ${repoPath}`;
+        }
+
+        return null;
+    }
+
+    // Функция для перевода элементов активности с разбитым текстом
+    function translateTimelineActivity() {
+        const activityElements = document.querySelectorAll('.color-fg-default.ws-normal.text-left');
+
+        activityElements.forEach(element => {
+            if (element.children.length) return;
+            const originalText = getOriginalText(element);
+            if (hasCyrillic(originalText)) return;
+
+            const fullText = normalizeText(originalText);
+
+            // Проверяем паттерн "Created X commits in Y repository"
+            const commitsMatch = fullText.match(/^Created\s+(\d+)\s+commits?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (commitsMatch) {
+                const commits = parseInt(commitsMatch[1], 10);
+                const repos = parseInt(commitsMatch[2], 10);
+                const commitWord = (plural(commits, 1, 2, 5) === 1) ? 'коммит' : ((plural(commits, 1, 2, 5) === 2) ? 'коммита' : 'коммитов');
+                const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+                setElementTextRecorded(element, `Создано ${commits} ${commitWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            // Проверяем паттерн "Opened X other pull requests in Y repositories"
+            const prsMatch = fullText.match(/^Opened\s+(\d+)\s+other\s+pull\s+requests\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (prsMatch) {
+                const prs = parseInt(prsMatch[1], 10);
+                const repos = parseInt(prsMatch[2], 10);
+                const prWord = (plural(prs, 1, 2, 5) === 1) ? 'запрос на извлечение' : ((plural(prs, 1, 2, 5) === 2) ? 'запроса на извлечение' : 'запросов на извлечение');
+                const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+                setElementTextRecorded(element, `Открыто ${prs} других ${prWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            // Проверяем паттерн "Created X repositories"
+            const reposMatchCreated = fullText.match(/^Created\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (reposMatchCreated) {
+                const num = parseInt(reposMatchCreated[1], 10);
+                const word = (plural(num, 1, 2, 5) === 1) ? 'репозиторий' : ((plural(num, 1, 2, 5) === 2) ? 'репозитория' : 'репозиториев');
+                setElementTextRecorded(element, `Создано ${num} ${word}`);
+                return;
+            }
+
+            // Проверяем паттерн "Opened X pull request in Y repositories"
+            const openedPrMatch = fullText.match(/^Opened\s+(\d+)\s+pull\s+requests?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i);
+            if (openedPrMatch) {
+                const prs = parseInt(openedPrMatch[1], 10);
+                const repos = parseInt(openedPrMatch[2], 10);
+                const prWord = (plural(prs, 1, 2, 5) === 1) ? 'запрос на слияние' : ((plural(prs, 1, 2, 5) === 2) ? 'запроса на слияние' : 'запросов на слияние');
+                const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+                setElementTextRecorded(element, `Открыто ${prs} ${prWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            // Проверяем паттерн "Started X discussions in Y repository(ies)"
+            const startedDiscussionsMatch = fullText.match(/^Started\s+(\d+)\s+discussions?\s+in\s+(\d+)\s+(repository|repositories)$/i);
+            if (startedDiscussionsMatch) {
+                const discussions = parseInt(startedDiscussionsMatch[1], 10);
+                const repos = parseInt(startedDiscussionsMatch[2], 10);
+                const discussionWord = (plural(discussions, 1, 2, 5) === 1) ? 'обсуждение' : ((plural(discussions, 1, 2, 5) === 2) ? 'обсуждения' : 'обсуждений');
+                const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+                setElementTextRecorded(element, `Начато ${discussions} ${discussionWord} в ${repos} ${reposWord}`);
+                return;
+            }
+
+            // Проверяем паттерн "Answered X discussion(s) in Y repository(ies)"
+            const answeredDiscussionMatch = fullText.match(/^Answered\s+(\d+)\s+discussions?\s+in\s+(\d+)\s+(repository|repositories)$/i);
+            if (answeredDiscussionMatch) {
+                const discussions = parseInt(answeredDiscussionMatch[1], 10);
+                const repos = parseInt(answeredDiscussionMatch[2], 10);
+                const discussionWord = (plural(discussions, 1, 2, 5) === 1) ? 'обсуждение' : ((plural(discussions, 1, 2, 5) === 2) ? 'обсуждения' : 'обсуждений');
+                const reposWord = (plural(repos, 1, 2, 5) === 1) ? 'репозитории' : ((plural(repos, 1, 2, 5) === 2) ? 'репозиториях' : 'репозиториях');
+                setElementTextRecorded(element, `Отвечено на ${discussions} ${discussionWord} в ${repos} ${reposWord}`);
+                return;
+            }
+        });
+
+        // Перевод кнопки "Показать больше активности"
+        const showMoreButton = document.querySelector('.ajax-pagination-btn');
+        if (showMoreButton && showMoreButton.textContent.trim() === 'Show more activity') {
+            setElementTextRecorded(showMoreButton, 'Показать больше активности');
+        }
+    }
+
+    // Функция для перевода сообщений об архивации репозитория
+    function translateArchiveFlashMessage() {
+        const flashWarnings = document.querySelectorAll('.flash.flash-warn.flash-full, .flash.flash-warn');
+
+        flashWarnings.forEach(flash => {
+            if (flash.children.length) return;
+            const text = getOriginalText(flash).trim();
+
+            const hybridMatch = text.match(/This repository was archived by the owner на (.+?)\. It is только что read-only\./);
+            if (hybridMatch) {
+                let date = hybridMatch[1];
+                date = date.replace(/мар\.\s*(\d+),\s*(\d+)/, '$1 марта $2 г.');
+                setElementTextRecorded(flash, `Этот репозиторий был архивирован владельцем ${date}. Он только для чтения.`);
+                return;
+            }
+
+            const fullMatch = text.match(/This repository was archived by the owner on (.+?)\. It is (?:now )?read-only\./);
+            if (fullMatch) {
+                let date = fullMatch[1];
+                setElementTextRecorded(flash, `Этот репозиторий был архивирован владельцем ${date}. Он только для чтения.`);
+                return;
+            }
+
+            const altMatch = text.match(/This repository was archived by the owner on (.+?)\. It is только что read-only\./);
+            if (altMatch) {
+                let date = altMatch[1];
+                setElementTextRecorded(flash, `Этот репозиторий был архивирован владельцем ${date}. Он только для чтения.`);
+                return;
+            }
+
+            const partialMatch = text.match(/был архивирован владельцем (.+?)\. Он только что read-only\./);
+            if (partialMatch) {
+                let date = partialMatch[1];
+                setElementTextRecorded(flash, `Этот репозиторий был архивирован владельцем ${date}. Он только для чтения.`);
+                return;
+            }
+
+            if (text.includes('только для чтения')) {
+                return;
+            }
+        });
+    }
+
+    function isTranslatableAttributeValue(value) {
+        return !!value && !hasCyrillic(value) && !/^https?:\/\//i.test(value) && !/^[a-f0-9]{40}$/i.test(value) && !/^\/[^\/]/.test(value);
+    }
+
+    function lookupAttributeTranslation(value) {
+        const normalized = normalizeText(value);
+        const candidates = [exactTranslations[value], exactTranslationsNormalized[normalized], lowerCaseTranslations[normalized.toLowerCase()]];
+        for (const candidate of candidates) {
+            if (typeof candidate === 'string') return candidate;
+        }
+        return null;
+    }
+
+    function shouldIgnoreAttributeElement(element) {
+        const tag = element.tagName.toLowerCase();
+        if (!IGNORE_TAGS.has(tag)) return shouldIgnoreElement(element);
+        if (tag === 'input' || tag === 'textarea' || tag === 'select' || tag === 'option' || tag === 'img') {
+            if (element.isContentEditable) return true;
+            if (element.getAttribute('translate') === 'no') return true;
+            return shouldIgnoreElement(element.parentElement);
+        }
+        return true;
+    }
+
+    function translateAttributes() {
+        // Перевод placeholder
+        document.querySelectorAll('[placeholder]').forEach(element => {
+            const placeholder = element.getAttribute('placeholder');
+            if (!isTranslatableAttributeValue(placeholder)) return;
+            const translated = lookupAttributeTranslation(placeholder);
+            if (translated === null || translated === placeholder) return;
+            if (shouldIgnoreAttributeElement(element)) return;
+            setAttrRecorded(element, 'placeholder', translated);
+        });
+
+        // Перевод aria-label
+        document.querySelectorAll('[aria-label]').forEach(element => {
+            const label = element.getAttribute('aria-label');
+            if (!isTranslatableAttributeValue(label)) return;
+            const translated = lookupAttributeTranslation(label);
+            if (translated === null || translated === label) return;
+            if (shouldIgnoreAttributeElement(element)) return;
+            setAttrRecorded(element, 'aria-label', translated);
+        });
+
+        // Перевод title
+        document.querySelectorAll('[title]').forEach(element => {
+            const title = element.getAttribute('title');
+            if (!isTranslatableAttributeValue(title)) return;
+            const translated = lookupAttributeTranslation(title);
+            if (translated === null || translated === title) return;
+            if (shouldIgnoreAttributeElement(element)) return;
+            if (element.tagName === 'A' && element.closest('.react-directory-filename-column')) {
+                return;
+            }
+            setAttrRecorded(element, 'title', translated);
+        });
+
+        // Перевод alt
+        document.querySelectorAll('[alt]').forEach(element => {
+            const alt = element.getAttribute('alt');
+            if (!isTranslatableAttributeValue(alt)) return;
+            const translated = lookupAttributeTranslation(alt);
+            if (translated === null || translated === alt) return;
+            if (shouldIgnoreAttributeElement(element)) return;
+            setAttrRecorded(element, 'alt', translated);
+        });
+    }
+
+    const numberedTextCache = new Map();
+    function translateNumberedTextCached(text) {
+        if (numberedTextCache.has(text)) return numberedTextCache.get(text);
+        if (numberedTextCache.size > 5000) numberedTextCache.clear();
+        const result = translateNumberedText(text);
+        numberedTextCache.set(text, result);
+        return result;
+    }
+
+    function translateNumberedTextNodes() {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(node => {
+            const current = node.textContent;
+            if (!current || current.length > 200 || !current.trim()) return;
+            const recorded = originalTexts.get(node);
+            const source = (typeof recorded === 'string') ? recorded : current;
+            if (!/\d|first\s+issue/.test(source)) return;
+            if (hasCyrillic(source)) return;
+            if (hasCyrillic(current) && !/[A-Za-z]{3,}/.test(current)) return;
+            const translated = translateNumberedTextCached(source.trim());
+            if (!translated) return;
+            const parent = node.parentElement;
+            if (!parent || shouldIgnoreElement(parent)) return;
+            const leading = source.match(/^\s*/)[0];
+            const trailing = source.match(/\s*$/)[0];
+            setTextNodeTranslated(node, leading + translated + trailing);
+        });
+    }
+
+    const POST_TRANSLATION_HOOKS = [
+        translateSVGGraphs,
+        translateBlankslateWithUsernames,
+        translateTimelineEvents,
+        translatePRLinks,
+        translateDisableWithAttributes,
+        translateAttributes,
+        translateTimelineActivity,
+        translateArchiveFlashMessage,
+        translateNumberedTextNodes
+    ];
+
+    function runPostTranslationHooks() {
+        if (!translationEnabled) return;
+        for (const hook of POST_TRANSLATION_HOOKS) {
+            try {
+                hook();
+            } catch (e) {
+            }
+        }
+    }
+
+    let postHooksTimer = null;
+    function schedulePostTranslationHooks() {
+        if (postHooksTimer) return;
+        postHooksTimer = setTimeout(() => {
+            postHooksTimer = null;
+            runPostTranslationHooks();
+        }, 200);
+    }
+
+    let translatePageTimer = null;
+    function translatePage() {
+        if (translatePageTimer) return;
+        translatePageTimer = setTimeout(() => {
+            translatePageTimer = null;
+            if (!translationEnabled) return;
+            if (document.title) {
+                const t = translateText(document.title);
+                if (t !== document.title) document.title = t;
+            }
+            scheduleTranslation([document.body]);
+            runPostTranslationHooks();
+        }, 300);
+    }
+
+    // Обработка навигации SPA
+    const originalPushState = history.pushState;
+    history.pushState = function() {
+        originalPushState.apply(this, arguments);
+        setTimeout(() => {
+            translatePage();
+        }, 100);
+    };
+
+    const originalReplaceState = history.replaceState;
+    history.replaceState = function() {
+        originalReplaceState.apply(this, arguments);
+        setTimeout(() => {
+            translatePage();
+        }, 100);
+    };
+
+    window.addEventListener('popstate', () => {
+        setTimeout(() => {
+            translatePage();
+        }, 100);
+    });
+
+    // Обработка событий Turbo/PJAX
+    document.addEventListener('turbo:render', () => setTimeout(translatePage, 100));
+    document.addEventListener('turbo:before-cache', () => setTimeout(translatePage, 100));
+    document.addEventListener('turbo:before-render', () => setTimeout(translatePage, 100));
+    document.addEventListener('pjax:end', () => setTimeout(translatePage, 100));
+    document.addEventListener('pjax:success', () => setTimeout(translatePage, 100));
+
+    // Универсальный обработчик для отслеживания изменений URL
+    let lastUrl = window.location.href;
+    const urlObserver = new MutationObserver(function() {
+        if (lastUrl !== window.location.href) {
+            lastUrl = window.location.href;
+            setTimeout(() => {
+                translatePage();
+            }, 100);
+        }
+    });
+    urlObserver.observe(document, { subtree: true, childList: true });
+
+    // Дополнительные обработчики для полной совместимости
+    window.addEventListener('pushstate', () => setTimeout(translatePage, 100));
+    window.addEventListener('replacestate', () => setTimeout(translatePage, 100));
+    document.addEventListener('DOMContentLoaded', () => setTimeout(runPostTranslationHooks, 100));
+    window.addEventListener('load', () => setTimeout(runPostTranslationHooks, 100));
+
+
     // ========================================================================
     // 13. НАБЛЮДАТЕЛЬ (инкрементальный, debounced)
     // ========================================================================
@@ -13924,6 +15348,7 @@
             addFilterTips();
             translateBlankslate();        // v7.0
             translateFormElements();      // v7.0
+            schedulePostTranslationHooks();
         });
     }
 
@@ -13970,6 +15395,7 @@
               'aria-busy',   // v7.1: снятие busy = пере-перевести
               'open',        // v7.1: <details> раскрыт
               'disabled',    // v7.1: кнопка стала активной
+              'data-disable-with',
           ]
       });
     }
@@ -14012,6 +15438,7 @@
         addFilterTips();
         translateBlankslate();        // v7.0
         translateFormElements();      // v7.0
+        runPostTranslationHooks();
         startObserver();
 
         if (document.title) {
@@ -14022,9 +15449,9 @@
         setTimeout(maybeShowOnboarding, 1000);
         setTimeout(maybeShowPageHelp, 800);
 
-        console.log('[GitHub RU v7.2] Загружен. Словарь: ' +
-            Object.keys(exactTranslations).length + ' фраз. Markdown-перевод: ' +
-            (markdownTranslationEnabled ? 'вкл' : 'выкл') + '.');
+        console.log('[🌐 GitHub Russian Translation активирован] Словарь: ' +
+                    Object.keys(exactTranslations).length + ' фраз. Markdown-перевод: ' +
+                    (markdownTranslationEnabled ? 'вкл' : 'выкл') + '.');
     }
 
     if (document.readyState === 'loading') {
