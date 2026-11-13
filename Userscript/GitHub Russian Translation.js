@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      7.7.1
+// @version      7.7.2
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
@@ -13157,6 +13157,8 @@
             return `${m[1]} ${plural(+m[1], 'коммит', 'коммита', 'коммитов')}`;
         if ((m = t.match(/^(\d+)\s+repositories?$/i)))
             return `${m[1]} ${plural(+m[1], 'репозиторий', 'репозитория', 'репозиториев')}`;
+        if ((m = t.match(/^and\s+(\d+)\s+other\s+repositor(?:y|ies)$/i)))
+            return `и ещё ${m[1]} ${plural(+m[1], 'репозиторий', 'репозитория', 'репозиториев')}`;
         if ((m = t.match(/^(\d+)\s+forks?$/i)))
             return `${m[1]} ${plural(+m[1], 'форк', 'форка', 'форков')}`;
         if ((m = t.match(/^(\d+)\s+comments?$/i)))
@@ -13428,9 +13430,17 @@
         '#search-suggestions-dialog', 'query-builder', '[class*="QueryBuilder"]',
         '.styled-input-content', '[data-type="filter-expression"]',
         '[data-component="TextInputWithTokens.Token"]', '[class*="prc-Token-"]',
-        '[class*="HighlightedText"]', '.ref-selector-button-text-container', '[class*="RefSelectorText"]'
+        '[class*="HighlightedText"]', '.ref-selector-button-text-container', '[class*="RefSelectorText"]',
+        '[class*="commitMessage"]', '.extended-commit-description-container',
+        '.react-directory-commit-message',
+        '[role="treeitem"]', '[class*="TreeViewItemContentText"]',
+        'a[href*="/deployments/"]:not([href*="activity_log"])', 'a[href*="/environments/"]',
+        '[class*="envName"]', '[class*="descriptionText"]', '[class*="prc-Truncate-Truncate"][data-expandable="true"]',
+        'a[href*="/releases/tag/"]',
+        '[class*="SidebarLanguages"]', '[itemprop="programmingLanguage"]',
+        'a[href*="?l="]', 'a[href*="&l="]', '[data-component="ProgressBar.Item"]'
     ];
-    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
+    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], .react-directory-commit-message a, a[href*="?l="], a[href*="&l="], a[href*="/deployments/"]:not([href*="activity_log"]), a[href*="/environments/"], a[href*="/releases/tag/"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
     const PROTECTED_SELECTOR_STR = PROTECTED_SELECTORS.join(',');
 
     const MARKDOWN_SELECTORS = [
@@ -15232,6 +15242,106 @@
         });
     }
 
+    let inlineKeyIndex = null;
+    function getInlineKeyIndex() {
+        if (inlineKeyIndex) return inlineKeyIndex;
+        inlineKeyIndex = new Map();
+        for (const key of Object.keys(exactTranslations)) {
+            if (key.indexOf('**') === -1) continue;
+            const value = exactTranslations[key];
+            if (typeof value === 'string') inlineKeyIndex.set(normalizeText(key), value);
+        }
+        return inlineKeyIndex;
+    }
+
+    const INLINE_MARKUP_TAGS = new Set(['STRONG', 'B', 'EM', 'I', 'A', 'CODE', 'KBD']);
+
+    function originalNodeText(node) {
+        const recorded = originalTexts.get(node);
+        return (typeof recorded === 'string') ? recorded : node.textContent;
+    }
+
+    function translateInlineMarkupElement(element, index) {
+        const parts = [];
+        let inlineCount = 0;
+        for (const child of element.childNodes) {
+            if (child.nodeType === Node.TEXT_NODE) {
+                parts.push({ inline: false, node: child });
+            } else if (child.nodeType === Node.ELEMENT_NODE && INLINE_MARKUP_TAGS.has(child.tagName) &&
+                       child.childNodes.length === 1 && child.firstChild.nodeType === Node.TEXT_NODE) {
+                parts.push({ inline: true, node: child.firstChild });
+                inlineCount++;
+            } else if (child.nodeType !== Node.COMMENT_NODE) {
+                return;
+            }
+        }
+        if (!inlineCount) return;
+        const key = normalizeText(parts.map(part => part.inline ? '**' + originalNodeText(part.node) + '**' : originalNodeText(part.node)).join(''));
+        const value = index.get(key);
+        if (value === undefined) return;
+        const segments = value.split('**');
+        if (segments.length !== inlineCount * 2 + 1) return;
+        const regions = [];
+        const inlineNodes = [];
+        let region = [];
+        parts.forEach(part => {
+            if (part.inline) {
+                regions.push(region);
+                region = [];
+                inlineNodes.push(part.node);
+            } else {
+                region.push(part.node);
+            }
+        });
+        regions.push(region);
+        for (let i = 0; i < segments.length; i += 2) {
+            if (segments[i].trim() && !regions[i / 2].length) return;
+        }
+        if (shouldIgnoreElement(element)) return;
+        segments.forEach((segment, i) => {
+            if (i % 2 === 1) {
+                setTextNodeTranslated(inlineNodes[(i - 1) / 2], segment);
+            } else {
+                regions[i / 2].forEach((node, position) => setTextNodeTranslated(node, position === 0 ? segment : ''));
+            }
+        });
+    }
+
+    function translateInlineMarkup() {
+        const index = getInlineKeyIndex();
+        if (!index.size) return;
+        const parents = new Set();
+        document.querySelectorAll('strong, b, em, i, a, code, kbd').forEach(element => {
+            const parent = element.parentElement;
+            if (parent && parent !== document.body && parent.childNodes.length <= 40) parents.add(parent);
+        });
+        parents.forEach(parent => translateInlineMarkupElement(parent, index));
+    }
+
+    function translateSplitTextNodes() {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const parents = new Set();
+        let node;
+        while ((node = walker.nextNode())) {
+            const sibling = node.nextSibling;
+            if (sibling && sibling.nodeType === Node.TEXT_NODE && node.parentElement) parents.add(node.parentElement);
+        }
+        parents.forEach(parent => {
+            const nodes = [...parent.childNodes];
+            if (nodes.length > 8 || nodes.some(child => child.nodeType !== Node.TEXT_NODE)) return;
+            const original = nodes.map(originalNodeText).join('');
+            if (hasCyrillic(original)) return;
+            const key = normalizeText(original);
+            if (!key || key.length > 200) return;
+            const translated = lookupAttributeTranslation(key);
+            if (translated === null || translated === key) return;
+            if (shouldIgnoreElement(parent)) return;
+            const leading = original.match(/^\s*/)[0];
+            const trailing = original.match(/\s*$/)[0];
+            nodes.forEach((child, position) => setTextNodeTranslated(child, position === 0 ? leading + translated + trailing : ''));
+        });
+    }
+
     const POST_TRANSLATION_HOOKS = [
         translateSVGGraphs,
         translateBlankslateWithUsernames,
@@ -15241,7 +15351,9 @@
         translateAttributes,
         translateTimelineActivity,
         translateArchiveFlashMessage,
-        translateNumberedTextNodes
+        translateNumberedTextNodes,
+        translateInlineMarkup,
+        translateSplitTextNodes
     ];
 
     function runPostTranslationHooks() {
