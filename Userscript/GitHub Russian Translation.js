@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      7.7.2
+// @version      7.7.3
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
@@ -13374,14 +13374,12 @@
         // v6.5: многострочный текст — переводим построчно
         if (text.includes('\n')) {
             const norm = text.replace(/\s+/g, ' ').trim();
-            if (exactTranslations[norm] !== undefined) return exactTranslations[norm];
+            const withEdges = value => text.slice(0, text.length - text.trimStart().length) + value + text.slice(text.trimEnd().length);
+            if (exactTranslations[norm] !== undefined) return withEdges(exactTranslations[norm]);
             const lower = norm.toLowerCase();
-            if (lowerCaseTranslations[lower] !== undefined) return lowerCaseTranslations[lower];
+            if (lowerCaseTranslations[lower] !== undefined) return withEdges(lowerCaseTranslations[lower]);
             const numNorm = translateNumberedExtended(norm);
-            if (numNorm) {
-                const ws = text.match(/^(\s*)[\s\S]*?(\s*)$/);
-                return (ws ? ws[1] : '') + numNorm + (ws ? ws[2] : '');
-            }
+            if (numNorm) return withEdges(numNorm);
             return text.split('\n')
                 .map(line => translateText(line, context))
                 .join('\n');
@@ -13437,10 +13435,12 @@
         'a[href*="/deployments/"]:not([href*="activity_log"])', 'a[href*="/environments/"]',
         '[class*="envName"]', '[class*="descriptionText"]', '[class*="prc-Truncate-Truncate"][data-expandable="true"]',
         'a[href*="/releases/tag/"]',
+        '[data-testid="latest-commit-html"]', '[class*="VerifiedHTMLText"]',
+        '[data-testid="quick-search-input-overlay"]', '[class*="inputOverlay"]',
         '[class*="SidebarLanguages"]', '[itemprop="programmingLanguage"]',
         'a[href*="?l="]', 'a[href*="&l="]', '[data-component="ProgressBar.Item"]'
     ];
-    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], .react-directory-commit-message a, a[href*="?l="], a[href*="&l="], a[href*="/deployments/"]:not([href*="activity_log"]), a[href*="/environments/"], a[href*="/releases/tag/"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
+    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], .react-directory-commit-message a, [data-testid="latest-commit-html"] a, a[href*="?l="], a[href*="&l="], a[href*="/deployments/"]:not([href*="activity_log"]), a[href*="/environments/"], a[href*="/releases/tag/"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
     const PROTECTED_SELECTOR_STR = PROTECTED_SELECTORS.join(',');
 
     const MARKDOWN_SELECTORS = [
@@ -15333,8 +15333,9 @@
             if (hasCyrillic(original)) return;
             const key = normalizeText(original);
             if (!key || key.length > 200) return;
-            const translated = lookupAttributeTranslation(key);
-            if (translated === null || translated === key) return;
+            let translated = lookupAttributeTranslation(key);
+            if (translated === null) translated = translateNumberedExtended(key);
+            if (!translated || translated === key) return;
             if (shouldIgnoreElement(parent)) return;
             const leading = original.match(/^\s*/)[0];
             const trailing = original.match(/\s*$/)[0];
