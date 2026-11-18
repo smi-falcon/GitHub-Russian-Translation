@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Russian Translation
 // @namespace    http://tampermonkey.net/
-// @version      7.7.3
+// @version      7.7.4
 // @description  Перевод интерфейса сайта GitHub на русский язык.
 // @downloadURL  https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
 // @updateURL    https://raw.githubusercontent.com/smi-falcon/GitHub-Russian-Translation/dictionary-update/Userscript/GitHub%20Russian%20Translation.js
@@ -1642,6 +1642,7 @@
         "Create your first list": "Создайте свой первый список",
         "Create your first list.": "Создайте свой первый список.",
         "Created": "Создано",
+        "Created a pull request in": "Создан запрос на слияние в",
         "Created an issue in": "Создана задача в",
         "Created with Highcharts 13.0.0": "Создано с помощью Highcharts 13.0.0",
         "Creation allowed by:": "Создание разрешено:",
@@ -13183,6 +13184,12 @@
         if ((m = t.match(/^Opened\s+(\d+)\s+pull\s+requests?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i))) {
             return `Открыто ${m[1]} ${plural(+m[1], 'запрос на слияние', 'запроса на слияние', 'запросов на слияние')} в ${m[2]} ${plural(+m[2], 'репозитории', 'репозиториях', 'репозиториях')}`;
         }
+        if ((m = t.match(/^that\s+received\s+(\d+)\s+comments?$/i)))
+            return `с ${m[1]} ${plural(+m[1], 'комментарием', 'комментариями', 'комментариями')}`;
+        if ((m = t.match(/^Opened\s+(\d+)\s+other\s+issues?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i))) {
+            const n = +m[1];
+            return `${(n % 10 === 1 && n % 100 !== 11) ? 'Открыта' : 'Открыто'} ${n} ${plural(n, 'другая задача', 'других задачи', 'других задач')} в ${m[2]} ${plural(+m[2], 'репозитории', 'репозиториях', 'репозиториях')}`;
+        }
         if ((m = t.match(/^Opened\s+(\d+)\s+issues?\s+in\s+(\d+)\s+repositor(?:y|ies)$/i))) {
             return `Открыто ${m[1]} ${plural(+m[1], 'задачу', 'задачи', 'задач')} в ${m[2]} ${plural(+m[2], 'репозитории', 'репозиториях', 'репозиториях')}`;
         }
@@ -13438,9 +13445,15 @@
         '[data-testid="latest-commit-html"]', '[class*="VerifiedHTMLText"]',
         '[data-testid="quick-search-input-overlay"]', '[class*="inputOverlay"]',
         '[class*="SidebarLanguages"]', '[itemprop="programmingLanguage"]',
-        'a[href*="?l="]', 'a[href*="&l="]', '[data-component="ProgressBar.Item"]'
+        'a[href*="?l="]', 'a[href*="&l="]', '[data-component="ProgressBar.Item"]',
+        '[itemprop~="codeRepository"]', 'span.repo', 'a[data-hovercard-type="repository"]', '[itemprop="description"]',
+        '.react-directory-row-name-cell-small-screen', '.react-directory-row-name-cell-large-screen',
+        '.cm-editor', '.code-editor', '.blob-editor-container', '.file-editor',
+        '.js-file-line', '.js-file-line-container', '.react-code-text', '.text-diff-container',
+        '[data-code-marker]', '[data-qa-code-editor]', '.git-command', '.sha', '.user-select-contain', '.commit-ref',
+        '[class*="CommitRow-module__ListItemTitle"]', '[class*="AuthorAvatar-module__authorHoverableLink"]'
     ];
-    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], .react-directory-commit-message a, [data-testid="latest-commit-html"] a, a[href*="?l="], a[href*="&l="], a[href*="/deployments/"]:not([href*="activity_log"]), a[href*="/environments/"], a[href*="/releases/tag/"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
+    const TOPIC_TAG_SELECTOR = '.topic-tag:not(.topic-tag-action), [data-octo-click="topic_click"], [class*="TopicTag"], [data-component="TextInputWithTokens.Token"], .react-directory-commit-message a, [data-testid="latest-commit-html"] a, a[itemprop~="codeRepository"], a[data-hovercard-type="repository"], a[href*="?l="], a[href*="&l="], a[href*="/deployments/"]:not([href*="activity_log"]), a[href*="/environments/"], a[href*="/releases/tag/"], a[href^="/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"]), a[href^="https://github.com/topics/"]:not([href*="?"]):not(.select-menu-item):not([role^="menuitem"])';
     const PROTECTED_SELECTOR_STR = PROTECTED_SELECTORS.join(',');
 
     const MARKDOWN_SELECTORS = [
@@ -13450,7 +13463,9 @@
         '[data-testid="comment-body"]',
         '[data-testid="issue-body"]',
         '.discussion-body',
-        '.release-body'
+        '.release-body',
+        '[class*="SharedMarkdownContent"]',
+        '[data-target="readme-toc.contentSticky"]'
     ];
     const MARKDOWN_SELECTOR_STR = MARKDOWN_SELECTORS.join(',');
 
@@ -13480,6 +13495,10 @@
             && el.hasAttribute('data-hovercard-url')
             && el.classList.contains('user-mention')) return true;
         if (el.namespaceURI === 'http://www.w3.org/2000/svg') return true;
+        if (tag === 'tool-tip' && el.hasAttribute('for')) {
+            const tipTarget = document.getElementById(el.getAttribute('for'));
+            if (tipTarget && (tipTarget.matches('[itemprop~="codeRepository"], a[data-hovercard-type="repository"]') || tipTarget.querySelector('span.repo'))) return true;
+        }
         if (el.closest && el.closest(PROTECTED_SELECTOR_STR)) return true;
         const tokenListbox = el.closest && el.closest('[role="listbox"]');
         if (tokenListbox && tokenListbox.id) {
@@ -13505,6 +13524,23 @@
         'strong', 'b', 'em', 'i', 'u', 'mark', 'code', 'sub', 'sup',
         'small', 's', 'del', 'ins', 'kbd', 'samp'
     ]);
+
+    function receivedCommentsPhrase(node, original) {
+        const m = original.replace(/\s+/g, ' ').trim().match(/^that\s+received\s+(\d+)\s+comments?$/i);
+        if (!m) return null;
+        let before = '';
+        for (let p = node.previousSibling; p && !before.trim(); p = p.previousSibling) {
+            if (p.nodeType === Node.TEXT_NODE) before = originalTexts.get(p) || p.textContent;
+        }
+        const n = +m[1];
+        const count = `${n} ${plural(n, 'комментарий', 'комментария', 'комментариев')}`;
+        let phrase;
+        if (/pull\s+request/i.test(before)) phrase = `получивший ${count}`;
+        else if (/issue/i.test(before)) phrase = `получившая ${count}`;
+        else phrase = `с ${n} ${plural(n, 'комментарием', 'комментариями', 'комментариями')}`;
+        const edges = original.match(/^(\s*)[\s\S]*?(\s*)$/);
+        return (edges ? edges[1] : '') + phrase + (edges ? edges[2] : '');
+    }
 
     function translateTextNode(node) {
         // v7.2: если узел уже помечен как переведённый, проверяем,
@@ -13565,14 +13601,16 @@
             const isLabelWord = /^[A-ZА-ЯЁ]/.test(t2n) && typeof exactTranslations[t2n] === 'string' && !hasTextSiblings;
             if (!isShortLabel && t2.length < 15 && !isLabelWord) return;
             if (!exactTranslations[t2] && !lowerCaseTranslations[t2.toLowerCase()] &&
-                !exactTranslations[t2n] && !lowerCaseTranslations[t2n.toLowerCase()]) return;
+                !exactTranslations[t2n] && !lowerCaseTranslations[t2n.toLowerCase()] &&
+                !/^that\s+received\s+\d+\s+comments?$/i.test(t2n)) return;
         }
 
         let context = null;
         if (parentTag === 'button') context = 'button';
         else if (parentTag === 'a' && parent.classList.contains('btn')) context = 'button';
 
-        const translated = translateText(original, context);
+        const receivedPhrase = receivedCommentsPhrase(node, original);
+        const translated = receivedPhrase !== null ? receivedPhrase : translateText(original, context);
         if (translated !== original) {
             if (!originalTexts.has(node)) originalTexts.set(node, original);
             node.textContent = translated;
